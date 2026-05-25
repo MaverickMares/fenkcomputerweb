@@ -89,18 +89,32 @@ class Configuracion(models.Model):
 
 class ComponentePC(models.Model):
     TIPO_CHOICES = [
+        # Componentes obligatorios
         ("CPU", "Procesador"),
-        ("GPU", "Tarjeta de Video"),
-        ("RAM", "Memoria RAM"),
         ("PLACA", "Placa Madre"),
+        ("RAM", "Memoria RAM"),
         ("ALMACENAMIENTO", "Almacenamiento"),
-        ("CASE", "Case"),
+        ("GPU", "Tarjeta de Video"),
         ("FUENTE", "Fuente de Poder"),
+        ("CASE", "Gabinete"),
+        # Periféricos opcionales
+        ("MONITOR", "Monitor"),
+        ("TECLADO", "Teclado"),
+        ("MOUSE", "Mouse"),
+        ("AURICULARES", "Auriculares"),
+        ("MOUSEPAD", "Mousepad"),
+        ("UPS", "Estabilizador UPS"),
+        ("MICROFONO", "Micrófono"),
+        ("CAMARA", "Cámara Web"),
     ]
     producto = models.OneToOneField(Producto, on_delete=models.CASCADE, related_name="componente")
     tipo = models.CharField(max_length=20, choices=TIPO_CHOICES)
     socket_compatible = models.CharField(max_length=50, blank=True)
     tipo_ram_compatible = models.CharField(max_length=50, blank=True)
+    # GPU: watts mínimos requeridos. FUENTE: watts que entrega.
+    watts_recomendados = models.PositiveIntegerField(default=0)
+    # PLACA: form factor propio (ATX/mATX/ITX). CASE: form factor máximo soportado.
+    form_factor = models.CharField(max_length=20, blank=True)
 
     class Meta:
         verbose_name = "Componente PC"

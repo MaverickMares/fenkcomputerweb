@@ -63,4 +63,4 @@ class ComponentePCSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ComponentePC
-        fields = ["id", "tipo", "socket_compatible", "tipo_ram_compatible", "producto"]
+        fields = ["id", "tipo", "socket_compatible", "tipo_ram_compatible", "watts_recomendados", "form_factor", "producto"]

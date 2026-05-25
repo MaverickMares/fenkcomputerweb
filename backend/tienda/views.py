@@ -88,5 +88,15 @@ class ComponentePCViewSet(viewsets.ReadOnlyModelViewSet):
             qs = qs.filter(socket_compatible=socket)
         if tipo_ram := p.get("tipo_ram_compatible"):
             qs = qs.filter(tipo_ram_compatible=tipo_ram)
+        if watts_min := p.get("watts_min"):
+            try:
+                qs = qs.filter(watts_recomendados__gte=int(watts_min))
+            except ValueError:
+                pass
+        if form_factor := p.get("form_factor"):
+            # ATX boards fit only ATX cases; mATX fits mATX/ATX; ITX fits all
+            compat = {"ATX": ["ATX"], "mATX": ["mATX", "ATX"], "ITX": ["ITX", "mATX", "ATX"]}
+            allowed = compat.get(form_factor, [form_factor])
+            qs = qs.filter(form_factor__in=allowed)
 
         return qs.filter(producto__stock__gt=0)
