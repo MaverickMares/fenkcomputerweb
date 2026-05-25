@@ -1,0 +1,9 @@
+Django==6.0.5
+djangorestframework==3.17.1
+django-cors-headers==4.9.0
+Pillow==12.2.0
+python-decouple==3.8
+dj-database-url==3.1.2
+gunicorn==26.0.0
+whitenoise==6.12.0
+# psycopg2-binary==2.9.10  # Descomentar si se usa PostgreSQL en producción

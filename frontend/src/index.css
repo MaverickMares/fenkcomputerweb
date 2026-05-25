@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rajdhani', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-red {
+    @apply bg-fenk-red hover:bg-fenk-red-dark text-white font-heading font-semibold px-6 py-3 rounded transition-all duration-200 shadow-red-glow-sm hover:shadow-red-glow inline-block cursor-pointer;
+  }
+  .btn-outline-red {
+    @apply border border-fenk-red text-fenk-red hover:bg-fenk-red hover:text-white font-heading font-semibold px-6 py-3 rounded transition-all duration-200 inline-block cursor-pointer;
+  }
+  .card-gaming {
+    @apply bg-fenk-card border border-fenk-border rounded-lg overflow-hidden transition-all duration-300 hover:border-fenk-red hover:shadow-red-glow-sm;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold font-heading text-white;
+  }
+  .badge-new {
+    @apply bg-fenk-red text-white text-xs font-bold px-2 py-0.5 rounded uppercase;
+  }
+  .badge-offer {
+    @apply bg-yellow-500 text-black text-xs font-bold px-2 py-0.5 rounded uppercase;
+  }
+  .badge-consult {
+    @apply bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded uppercase;
+  }
+}

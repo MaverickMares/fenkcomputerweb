@@ -1,0 +1,11 @@
+backend_env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+db.sqlite3
+media/
+staticfiles/
+.git/
+*.md

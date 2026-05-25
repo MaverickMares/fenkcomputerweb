@@ -1,0 +1,152 @@
+[
+  {"model": "tienda.categoria", "pk": 1, "fields": {"nombre": "Laptops", "descripcion": "Laptops gaming y para trabajo de alto rendimiento", "icono": "💻"}},
+  {"model": "tienda.categoria", "pk": 2, "fields": {"nombre": "PCs Completas", "descripcion": "Computadoras de escritorio armadas y listas para usar", "icono": "🖥️"}},
+  {"model": "tienda.categoria", "pk": 3, "fields": {"nombre": "Componentes", "descripcion": "Procesadores, GPUs, RAM y placas madre para armar tu PC", "icono": "⚙️"}},
+  {"model": "tienda.categoria", "pk": 4, "fields": {"nombre": "Monitores", "descripcion": "Pantallas gaming y profesionales en todos los tamaños", "icono": "🖥️"}},
+  {"model": "tienda.categoria", "pk": 5, "fields": {"nombre": "Periféricos", "descripcion": "Teclados mecánicos, mouse gaming, headsets y más", "icono": "🖱️"}},
+  {"model": "tienda.categoria", "pk": 6, "fields": {"nombre": "Sillas Gaming", "descripcion": "Sillas ergonómicas con soporte lumbar para largas sesiones", "icono": "🪑"}},
+
+  {"model": "tienda.marca", "pk": 1, "fields": {"nombre": "ASUS", "logo": ""}},
+  {"model": "tienda.marca", "pk": 2, "fields": {"nombre": "MSI", "logo": ""}},
+  {"model": "tienda.marca", "pk": 3, "fields": {"nombre": "Intel", "logo": ""}},
+  {"model": "tienda.marca", "pk": 4, "fields": {"nombre": "AMD", "logo": ""}},
+  {"model": "tienda.marca", "pk": 5, "fields": {"nombre": "Gigabyte", "logo": ""}},
+  {"model": "tienda.marca", "pk": 6, "fields": {"nombre": "Corsair", "logo": ""}},
+
+  {"model": "tienda.producto", "pk": 1, "fields": {
+    "nombre": "ASUS ROG Strix G15 (2024)",
+    "descripcion": "Laptop gaming de alto rendimiento con AMD Ryzen 9 y RTX 4070. Pantalla 15.6\" FHD 300Hz ideal para gaming competitivo y creación de contenido.",
+    "precio_usd": "1299.00", "precio_soles": "4797.00", "stock": 5,
+    "imagen": "", "categoria": 1, "marca": 1,
+    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"CPU": "AMD Ryzen 9 7945HX", "GPU": "NVIDIA RTX 4070 8GB", "RAM": "16GB DDR5 4800MHz", "Almacenamiento": "1TB NVMe PCIe 4.0", "Pantalla": "15.6\" FHD 1920x1080 300Hz", "Batería": "90Wh", "SO": "Windows 11 Home"},
+    "creado": "2026-05-01T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 2, "fields": {
+    "nombre": "MSI Katana 15 B13V",
+    "descripcion": "Laptop gaming de gama media con Intel Core i7-13620H y RTX 4060. Excelente relación precio-rendimiento para gaming 1080p.",
+    "precio_usd": "899.00", "precio_soles": "3320.00", "stock": 8,
+    "imagen": "", "categoria": 1, "marca": 2,
+    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"CPU": "Intel Core i7-13620H", "GPU": "NVIDIA RTX 4060 8GB", "RAM": "16GB DDR5", "Almacenamiento": "512GB NVMe", "Pantalla": "15.6\" FHD 144Hz", "Batería": "53.5Wh"},
+    "creado": "2026-05-01T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 3, "fields": {
+    "nombre": "PC Gamer FENK Dragon (AMD)",
+    "descripcion": "PC gaming completa basada en AMD Ryzen 5 5600X y RX 6700 XT. Lista para usar con Windows 11. Perfecta para gaming 1080p y 1440p.",
+    "precio_usd": "799.00", "precio_soles": "2950.00", "stock": 3,
+    "imagen": "", "categoria": 2, "marca": 4,
+    "es_nuevo": false, "es_oferta": true, "consultar_disponibilidad": false,
+    "especificaciones": {"CPU": "AMD Ryzen 5 5600X", "GPU": "AMD RX 6700 XT 12GB", "RAM": "16GB DDR4 3200MHz", "Almacenamiento": "1TB NVMe + 500GB HDD", "Placa Madre": "Gigabyte B550M AORUS", "Fuente": "650W 80+ Bronze", "SO": "Windows 11 Home"},
+    "creado": "2026-04-15T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 4, "fields": {
+    "nombre": "PC Gamer FENK Titan (Intel)",
+    "descripcion": "PC gaming de alta gama con Intel Core i7-13700K y RTX 4070. Para los que exigen lo mejor en gaming 4K y creación de contenido.",
+    "precio_usd": "1099.00", "precio_soles": "4060.00", "stock": 2,
+    "imagen": "", "categoria": 2, "marca": 3,
+    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"CPU": "Intel Core i7-13700K", "GPU": "NVIDIA RTX 4070 12GB", "RAM": "32GB DDR5 6000MHz", "Almacenamiento": "1TB NVMe PCIe 4.0", "Placa Madre": "MSI Z790 Gaming Plus", "Fuente": "750W 80+ Gold", "SO": "Windows 11 Pro"},
+    "creado": "2026-05-10T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 5, "fields": {
+    "nombre": "Intel Core i9-14900K",
+    "descripcion": "Procesador Intel de 14.ª generación con 24 núcleos y frecuencia boost de 6.0GHz. El rey del gaming y la productividad en plataforma LGA1700.",
+    "precio_usd": "549.00", "precio_soles": "2030.00", "stock": 10,
+    "imagen": "", "categoria": 3, "marca": 3,
+    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"Núcleos": "24 (8P + 16E)", "Hilos": "32", "Frecuencia base": "3.2 GHz", "Frecuencia boost": "6.0 GHz", "Socket": "LGA1700", "TDP": "125W", "Memoria compatible": "DDR4/DDR5", "Cache L3": "36MB"},
+    "creado": "2026-04-01T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 6, "fields": {
+    "nombre": "AMD Ryzen 7 7800X3D",
+    "descripcion": "El mejor procesador para gaming gracias a su tecnología 3D V-Cache de 96MB. Domina en todos los juegos en plataforma AM5.",
+    "precio_usd": "449.00", "precio_soles": "1660.00", "stock": 7,
+    "imagen": "", "categoria": 3, "marca": 4,
+    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"Núcleos": "8", "Hilos": "16", "Frecuencia base": "4.5 GHz", "Frecuencia boost": "5.0 GHz", "Socket": "AM5", "TDP": "120W", "Memoria compatible": "DDR5", "Cache": "96MB 3D V-Cache"},
+    "creado": "2026-04-01T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 7, "fields": {
+    "nombre": "ASUS TUF Gaming RTX 4070 Ti Super",
+    "descripcion": "Tarjeta gráfica RTX 4070 Ti Super con 16GB GDDR6X. Rendimiento excepcional para gaming 4K y ray tracing con DLSS 3.",
+    "precio_usd": "799.00", "precio_soles": "2950.00", "stock": 4,
+    "imagen": "", "categoria": 3, "marca": 1,
+    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"VRAM": "16GB GDDR6X", "Bus": "256-bit", "Boost Clock": "2670 MHz", "TDP": "285W", "Salidas": "3x DisplayPort 1.4a, 1x HDMI 2.1a", "Longitud": "336mm"},
+    "creado": "2026-05-15T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 8, "fields": {
+    "nombre": "MSI Gaming Radeon RX 7800 XT",
+    "descripcion": "Tarjeta gráfica AMD RX 7800 XT con 16GB GDDR6. La mejor relación precio-rendimiento para gaming 1440p con tecnología FSR 3.",
+    "precio_usd": "499.00", "precio_soles": "1840.00", "stock": 6,
+    "imagen": "", "categoria": 3, "marca": 2,
+    "es_nuevo": false, "es_oferta": true, "consultar_disponibilidad": false,
+    "especificaciones": {"VRAM": "16GB GDDR6", "Bus": "256-bit", "Boost Clock": "2430 MHz", "TDP": "263W", "Salidas": "2x DisplayPort 2.1, 2x HDMI 2.1", "Longitud": "322mm"},
+    "creado": "2026-04-20T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 9, "fields": {
+    "nombre": "Gigabyte B650 AORUS Elite AX",
+    "descripcion": "Placa madre AM5 para procesadores AMD Ryzen 7000/8000. WiFi 6E integrado, soporte DDR5 y PCIe 5.0 para máximo rendimiento.",
+    "precio_usd": "219.00", "precio_soles": "810.00", "stock": 9,
+    "imagen": "", "categoria": 3, "marca": 5,
+    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"Socket": "AM5", "Chipset": "AMD B650", "Slots RAM": "4x DDR5 hasta 192GB", "PCIe": "PCIe 5.0 x16", "Storage": "2x M.2 PCIe 4.0, 4x SATA", "Red": "2.5GbE + WiFi 6E", "USB": "USB 3.2 Gen 2x2, USB-C"},
+    "creado": "2026-04-10T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 10, "fields": {
+    "nombre": "ASUS ROG Swift OLED 27\" PG27AQDP",
+    "descripcion": "Monitor gaming OLED de 27\" QHD 240Hz. Tiempos de respuesta de 0.03ms y colores perfectos. El monitor definitivo para gaming competitivo.",
+    "precio_usd": "699.00", "precio_soles": "2580.00", "stock": 3,
+    "imagen": "", "categoria": 4, "marca": 1,
+    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"Tamaño": "27 pulgadas", "Resolución": "2560x1440 QHD", "Panel": "OLED", "Frecuencia": "240Hz", "Tiempo respuesta": "0.03ms GtG", "HDR": "OLED HDR", "Entradas": "2x HDMI 2.1, 1x DisplayPort 1.4"},
+    "creado": "2026-05-20T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 11, "fields": {
+    "nombre": "MSI Optix MAG274QRF-QD",
+    "descripcion": "Monitor gaming IPS Quantum Dot 27\" QHD 165Hz. Colores vibrantes gracias a la tecnología Quantum Dot y alta tasa de refresco.",
+    "precio_usd": "349.00", "precio_soles": "1290.00", "stock": 7,
+    "imagen": "", "categoria": 4, "marca": 2,
+    "es_nuevo": false, "es_oferta": true, "consultar_disponibilidad": false,
+    "especificaciones": {"Tamaño": "27 pulgadas", "Resolución": "2560x1440 QHD", "Panel": "IPS Quantum Dot", "Frecuencia": "165Hz", "Tiempo respuesta": "1ms IPS", "HDR": "HDR400", "Entradas": "1x HDMI 2.0b, 2x DisplayPort 1.4, 1x USB-C"},
+    "creado": "2026-04-25T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 12, "fields": {
+    "nombre": "Corsair Vengeance DDR5 32GB (2x16GB) 5600MHz",
+    "descripcion": "Kit de memoria RAM DDR5 de alta velocidad para plataformas AM5 e Intel LGA1700. Compatible con XMP 3.0 y EXPO para overclock automático.",
+    "precio_usd": "109.00", "precio_soles": "403.00", "stock": 15,
+    "imagen": "", "categoria": 3, "marca": 6,
+    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"Capacidad": "32GB (2x16GB)", "Tipo": "DDR5", "Velocidad": "5600MHz", "Latencia": "CL36", "Voltaje": "1.25V", "Perfil": "XMP 3.0 / EXPO"},
+    "creado": "2026-04-05T00:00:00Z"
+  }},
+
+  {"model": "tienda.componentepc", "pk": 1, "fields": {"producto": 5, "tipo": "CPU", "socket_compatible": "LGA1700", "tipo_ram_compatible": "DDR5"}},
+  {"model": "tienda.componentepc", "pk": 2, "fields": {"producto": 6, "tipo": "CPU", "socket_compatible": "AM5", "tipo_ram_compatible": "DDR5"}},
+  {"model": "tienda.componentepc", "pk": 3, "fields": {"producto": 7, "tipo": "GPU", "socket_compatible": "", "tipo_ram_compatible": ""}},
+  {"model": "tienda.componentepc", "pk": 4, "fields": {"producto": 8, "tipo": "GPU", "socket_compatible": "", "tipo_ram_compatible": ""}},
+  {"model": "tienda.componentepc", "pk": 5, "fields": {"producto": 9, "tipo": "PLACA", "socket_compatible": "AM5", "tipo_ram_compatible": "DDR5"}},
+  {"model": "tienda.componentepc", "pk": 6, "fields": {"producto": 12, "tipo": "RAM", "socket_compatible": "", "tipo_ram_compatible": "DDR5"}},
+
+  {"model": "tienda.configuracion", "pk": 1, "fields": {
+    "nombre_tienda": "FENK Computers",
+    "whatsapp": "+51999999999",
+    "direccion": "Lima, Perú",
+    "instagram": "@fenkcomputers",
+    "facebook": "/fenkcomputers",
+    "tiktok": "@fenkcomputers",
+    "youtube": ""
+  }}
+]

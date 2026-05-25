@@ -1,0 +1,92 @@
+from rest_framework import viewsets
+from rest_framework.response import Response
+from .models import Categoria, Marca, Producto, Configuracion, ComponentePC
+from .serializers import (
+    CategoriaSerializer,
+    MarcaSerializer,
+    ProductoSerializer,
+    ProductoDetalleSerializer,
+    ConfiguracionSerializer,
+    ComponentePCSerializer,
+)
+
+
+class CategoriaViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
+
+
+class MarcaViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Marca.objects.all()
+    serializer_class = MarcaSerializer
+
+
+class ProductoViewSet(viewsets.ReadOnlyModelViewSet):
+    def get_queryset(self):
+        qs = Producto.objects.select_related("categoria", "marca")
+        p = self.request.query_params
+
+        if cat := p.get("categoria"):
+            qs = qs.filter(categoria_id=cat)
+        if marca := p.get("marca"):
+            qs = qs.filter(marca_id=marca)
+        if p.get("es_nuevo") == "true":
+            qs = qs.filter(es_nuevo=True)
+        if p.get("es_oferta") == "true":
+            qs = qs.filter(es_oferta=True)
+        if precio_min := p.get("precio_min"):
+            qs = qs.filter(precio_usd__gte=precio_min)
+        if precio_max := p.get("precio_max"):
+            qs = qs.filter(precio_usd__lte=precio_max)
+
+        orden = p.get("orden", "")
+        if orden == "precio_asc":
+            qs = qs.order_by("precio_usd")
+        elif orden == "precio_desc":
+            qs = qs.order_by("-precio_usd")
+        elif orden == "nombre":
+            qs = qs.order_by("nombre")
+
+        return qs
+
+    def get_serializer_class(self):
+        if self.action == "retrieve":
+            return ProductoDetalleSerializer
+        return ProductoSerializer
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = Producto.objects.prefetch_related("galeria").select_related(
+            "categoria", "marca"
+        ).get(pk=kwargs["pk"])
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
+
+
+class ConfiguracionViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Configuracion.objects.all()
+    serializer_class = ConfiguracionSerializer
+
+    def list(self, request, *args, **kwargs):
+        obj = Configuracion.objects.first()
+        if obj:
+            return Response(ConfiguracionSerializer(obj).data)
+        return Response({})
+
+
+class ComponentePCViewSet(viewsets.ReadOnlyModelViewSet):
+    serializer_class = ComponentePCSerializer
+
+    def get_queryset(self):
+        qs = ComponentePC.objects.select_related(
+            "producto", "producto__marca", "producto__categoria"
+        )
+        p = self.request.query_params
+
+        if tipo := p.get("tipo"):
+            qs = qs.filter(tipo=tipo)
+        if socket := p.get("socket_compatible"):
+            qs = qs.filter(socket_compatible=socket)
+        if tipo_ram := p.get("tipo_ram_compatible"):
+            qs = qs.filter(tipo_ram_compatible=tipo_ram)
+
+        return qs.filter(producto__stock__gt=0)
