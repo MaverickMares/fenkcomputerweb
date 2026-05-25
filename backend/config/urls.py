@@ -4,9 +4,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 # Personalización del panel de administración
-admin.site.site_header = "Melani's Sweet Creations — Panel de Administración"
-admin.site.site_title = "Melani's Sweet Creations"
-admin.site.index_title = "Gestión de la Pastelería"
+admin.site.site_header = "FENK Computers — Panel de Administración"
+admin.site.site_title = "FENK Computers"
+admin.site.index_title = "Gestión de la Tienda"
 
 urlpatterns = [
     path("admin/", admin.site.urls),
