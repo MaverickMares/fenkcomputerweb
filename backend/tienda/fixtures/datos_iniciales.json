@@ -460,6 +460,140 @@
   {"model": "tienda.componentepc", "pk": 35, "fields": {"producto": 35, "tipo": "MICROFONO",      "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
   {"model": "tienda.componentepc", "pk": 36, "fields": {"producto": 36, "tipo": "CAMARA",         "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
 
+  {"model": "tienda.categoria", "pk": 17, "fields": {"nombre": "PCs Completas",  "descripcion": "Computadoras armadas y listas para usar, gaming y oficina", "icono": "🖥️"}},
+  {"model": "tienda.categoria", "pk": 18, "fields": {"nombre": "Sillas Gaming",   "descripcion": "Sillas ergonómicas gaming y de oficina de alta gama", "icono": "🪑"}},
+
+  {"model": "tienda.marca", "pk": 27, "fields": {"nombre": "FENK",       "logo": ""}},
+  {"model": "tienda.marca", "pk": 28, "fields": {"nombre": "DXRacer",    "logo": ""}},
+  {"model": "tienda.marca", "pk": 29, "fields": {"nombre": "SecretLab",  "logo": ""}},
+  {"model": "tienda.marca", "pk": 30, "fields": {"nombre": "Cougar",     "logo": ""}},
+
+  {"model": "tienda.producto", "pk": 39, "fields": {
+    "nombre": "MSI Katana 15 i7 RTX 4060 16GB",
+    "descripcion": "Laptop gaming 15.6\" con Intel Core i7-13620H, RTX 4060 8GB y 16GB DDR5. Pantalla FHD 144Hz. Excelente relación precio-rendimiento con cooling Cooler Boost 5.",
+    "precio_usd": "849.00", "precio_soles": "3167.00", "stock": 8,
+    "imagen": "", "categoria": 16, "marca": 4,
+    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"CPU": "Intel Core i7-13620H", "GPU": "NVIDIA RTX 4060 8GB", "RAM": "16GB DDR5", "Almacenamiento": "512GB NVMe PCIe 4.0", "Pantalla": "15.6\" FHD 1920x1080 144Hz", "Batería": "53.5Wh", "SO": "Windows 11 Home"},
+    "creado": "2026-05-01T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 40, "fields": {
+    "nombre": "PC Gamer FENK Titan RTX 4090 32GB DDR5",
+    "descripcion": "PC gaming de élite: Intel i9-14900K + RTX 4090 24GB + 32GB DDR5 6000MHz + 2TB NVMe PCIe 5.0. Para gaming 4K sin compromisos y creación de contenido profesional.",
+    "precio_usd": "2499.00", "precio_soles": "9321.00", "stock": 2,
+    "imagen": "", "categoria": 17, "marca": 27,
+    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"CPU": "Intel Core i9-14900K", "GPU": "NVIDIA RTX 4090 24GB", "RAM": "32GB DDR5 6000MHz", "Almacenamiento": "2TB NVMe PCIe 5.0", "Placa": "MSI Z790 Carbon WiFi", "Fuente": "1000W 80+ Platinum", "Gabinete": "Lian Li O11 Dynamic EVO", "SO": "Windows 11 Pro"},
+    "creado": "2026-05-10T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 41, "fields": {
+    "nombre": "PC Gamer FENK Pro RTX 4070 16GB DDR5",
+    "descripcion": "PC gaming de alto rendimiento: AMD Ryzen 7 7700X + RTX 4070 12GB + 16GB DDR5 + 1TB NVMe. La build perfecta para gaming 1440p y trabajo creativo.",
+    "precio_usd": "1499.00", "precio_soles": "5592.00", "stock": 4,
+    "imagen": "", "categoria": 17, "marca": 27,
+    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"CPU": "AMD Ryzen 7 7700X", "GPU": "NVIDIA RTX 4070 12GB", "RAM": "16GB DDR5 5600MHz", "Almacenamiento": "1TB NVMe PCIe 4.0", "Placa": "ASUS ROG Strix B650-A", "Fuente": "750W 80+ Gold", "Gabinete": "NZXT H7 Flow", "SO": "Windows 11 Home"},
+    "creado": "2026-05-10T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 42, "fields": {
+    "nombre": "PC Oficina FENK Basic i5 8GB DDR4",
+    "descripcion": "PC de oficina confiable: Intel Core i5-12400 + 8GB DDR4 + 256GB SSD. Para trabajo diario, navegación y productividad con Windows 11 Pro incluido.",
+    "precio_usd": "499.00", "precio_soles": "1861.00", "stock": 10,
+    "imagen": "", "categoria": 17, "marca": 27,
+    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"CPU": "Intel Core i5-12400", "GPU": "Intel UHD Graphics 730", "RAM": "8GB DDR4 3200MHz", "Almacenamiento": "256GB SSD NVMe", "Placa": "ASUS Prime H610M-K", "Fuente": "400W 80+ Bronze", "Gabinete": "Cooler Master MasterBox Q300L", "SO": "Windows 11 Pro"},
+    "creado": "2026-05-10T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 43, "fields": {
+    "nombre": "LG 27\" 2K QHD IPS 165Hz",
+    "descripcion": "Monitor gaming QHD 2560x1440 con panel IPS y 165Hz. AMD FreeSync Premium y compatible con G-Sync. Colores precisos sRGB 99% para gaming y diseño.",
+    "precio_usd": "279.00", "precio_soles": "1041.00", "stock": 7,
+    "imagen": "", "categoria": 8, "marca": 20,
+    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"Tamaño": "27\"", "Resolución": "2560x1440 (2K QHD)", "Panel": "IPS", "Frecuencia": "165Hz", "Tiempo respuesta": "1ms GtG", "Color": "sRGB 99%", "Entradas": "1x HDMI 2.0, 2x DP 1.4"},
+    "creado": "2026-04-15T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 44, "fields": {
+    "nombre": "Samsung 32\" Curvo 165Hz FHD Odyssey",
+    "descripcion": "Monitor gaming curvo 32\" FHD 1920x1080 con panel VA 165Hz y curvatura 1000R. Excelente contraste y colores para gaming inmersivo a precio accesible.",
+    "precio_usd": "279.00", "precio_soles": "1041.00", "stock": 8,
+    "imagen": "", "categoria": 8, "marca": 10,
+    "es_nuevo": false, "es_oferta": true, "consultar_disponibilidad": false,
+    "especificaciones": {"Tamaño": "32\"", "Resolución": "1920x1080 (FHD)", "Panel": "VA Curvo 1000R", "Frecuencia": "165Hz", "Tiempo respuesta": "1ms MPRT", "Contraste": "3000:1", "Entradas": "1x HDMI 1.4, 1x DP 1.2"},
+    "creado": "2026-04-15T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 45, "fields": {
+    "nombre": "Samsung 27\" 2K QHD 144Hz IPS",
+    "descripcion": "Monitor gaming QHD 27\" con panel IPS 144Hz y HDR10. Excelente para gaming competitivo y productividad. Compatible con AMD FreeSync Premium Pro.",
+    "precio_usd": "229.00", "precio_soles": "854.00", "stock": 9,
+    "imagen": "", "categoria": 8, "marca": 10,
+    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"Tamaño": "27\"", "Resolución": "2560x1440 (2K QHD)", "Panel": "IPS", "Frecuencia": "144Hz", "Tiempo respuesta": "1ms GtG", "HDR": "HDR10", "Entradas": "1x HDMI 2.0, 1x DP 1.2"},
+    "creado": "2026-04-15T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 46, "fields": {
+    "nombre": "MSI MAG 274QRF-QD 27\" 240Hz IPS 1ms",
+    "descripcion": "Monitor gaming IPS Quantum Dot 27\" QHD 240Hz con tiempo de respuesta de 1ms. Colores vibrantes con 95% DCI-P3. Para gaming competitivo en máxima fluidez.",
+    "precio_usd": "349.00", "precio_soles": "1302.00", "stock": 4,
+    "imagen": "", "categoria": 8, "marca": 4,
+    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"Tamaño": "27\"", "Resolución": "2560x1440 (QHD)", "Panel": "IPS Quantum Dot", "Frecuencia": "240Hz", "Tiempo respuesta": "1ms IPS", "Color": "95% DCI-P3", "Entradas": "1x HDMI 2.0b, 2x DP 1.4, 1x USB-C"},
+    "creado": "2026-04-15T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 47, "fields": {
+    "nombre": "MSI MAG 274QRFX 27\" 2K QHD 170Hz 1ms",
+    "descripcion": "Monitor gaming IPS 27\" QHD a 170Hz con 1ms de respuesta y G-Sync Compatible. Excelente opción entre rendimiento y calidad de imagen para gaming 1440p.",
+    "precio_usd": "319.00", "precio_soles": "1190.00", "stock": 5,
+    "imagen": "", "categoria": 8, "marca": 4,
+    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"Tamaño": "27\"", "Resolución": "2560x1440 (QHD)", "Panel": "IPS", "Frecuencia": "170Hz", "Tiempo respuesta": "1ms GtG", "HDR": "HDR400", "Entradas": "1x HDMI 2.0, 2x DP 1.4"},
+    "creado": "2026-04-15T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 48, "fields": {
+    "nombre": "Silla Gaming DXRacer Formula Negra/Roja",
+    "descripcion": "Silla gaming racing style con respaldo alto, soporte lumbar ajustable y reposacabezas con almohada. Tapizado PU premium y estructura de acero. Hasta 100kg.",
+    "precio_usd": "299.00", "precio_soles": "1115.00", "stock": 5,
+    "imagen": "", "categoria": 18, "marca": 28,
+    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"Material": "PU sintético", "Estructura": "Acero", "Peso max.": "100 kg", "Reclinación": "135°", "Reposabrazos": "3D ajustables", "Ruedas": "Nylon 60mm", "Garantía": "2 años"},
+    "creado": "2026-05-05T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 49, "fields": {
+    "nombre": "Silla Gaming SecretLab Titan Evo 2024",
+    "descripcion": "La silla gaming más premiada del mundo. Tapizado NEO Hybrid Leatherette, soporte lumbar magnético integrado, reposacabezas 4D y mecanismo 4-tilt. Hasta 130kg.",
+    "precio_usd": "449.00", "precio_soles": "1675.00", "stock": 3,
+    "imagen": "", "categoria": 18, "marca": 29,
+    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"Material": "NEO Hybrid Leatherette", "Estructura": "Acero premium", "Peso max.": "130 kg", "Reclinación": "165°", "Reposabrazos": "4D cloud", "Lumbar": "Magnético integrado", "Garantía": "5 años"},
+    "creado": "2026-05-05T00:00:00Z"
+  }},
+
+  {"model": "tienda.producto", "pk": 50, "fields": {
+    "nombre": "Silla Gaming Cougar Armor One",
+    "descripcion": "Silla gaming con tapizado de alta calidad, soporte lumbar y cervical incluidos. Estructura metálica robusta, base de aluminio y ruedas silenciosas. Hasta 120kg.",
+    "precio_usd": "199.00", "precio_soles": "742.00", "stock": 8,
+    "imagen": "", "categoria": 18, "marca": 30,
+    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
+    "especificaciones": {"Material": "PU premium", "Estructura": "Acero + base aluminio", "Peso max.": "120 kg", "Reclinación": "180°", "Reposabrazos": "1D", "Ruedas": "Silenciosas 60mm", "Garantía": "1 año"},
+    "creado": "2026-05-05T00:00:00Z"
+  }},
+
+  {"model": "tienda.componentepc", "pk": 37, "fields": {"producto": 43, "tipo": "MONITOR", "socket_compatible": "", "tipo_ram_compatible": "", "watts_recomendados": 0, "form_factor": ""}},
+  {"model": "tienda.componentepc", "pk": 38, "fields": {"producto": 44, "tipo": "MONITOR", "socket_compatible": "", "tipo_ram_compatible": "", "watts_recomendados": 0, "form_factor": ""}},
+  {"model": "tienda.componentepc", "pk": 39, "fields": {"producto": 45, "tipo": "MONITOR", "socket_compatible": "", "tipo_ram_compatible": "", "watts_recomendados": 0, "form_factor": ""}},
+  {"model": "tienda.componentepc", "pk": 40, "fields": {"producto": 46, "tipo": "MONITOR", "socket_compatible": "", "tipo_ram_compatible": "", "watts_recomendados": 0, "form_factor": ""}},
+  {"model": "tienda.componentepc", "pk": 41, "fields": {"producto": 47, "tipo": "MONITOR", "socket_compatible": "", "tipo_ram_compatible": "", "watts_recomendados": 0, "form_factor": ""}},
+
   {"model": "tienda.configuracion", "pk": 1, "fields": {
     "nombre_tienda": "FENK Computers",
     "whatsapp": "+51999999999",
