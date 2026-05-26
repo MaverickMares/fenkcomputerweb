@@ -18,13 +18,20 @@ export default function Navbar() {
       {/* Barra de categorías roja */}
       <div className="bg-fenk-red">
         <div className="max-w-7xl mx-auto px-4 flex items-center gap-6 h-8 overflow-x-auto">
-          {["Laptops", "PCs Completas", "Componentes", "Monitores", "Periféricos", "Sillas Gaming"].map((cat) => (
+          {[
+            { label: "Laptops",       categorias: "16" },
+            { label: "PCs Completas", categorias: "17" },
+            { label: "Componentes",   categorias: "1,2,3,4,5,6,7" },
+            { label: "Monitores",     categorias: "8" },
+            { label: "Periféricos",   categorias: "9,10,11,12,13,14,15" },
+            { label: "Sillas Gaming", categorias: "18" },
+          ].map(({ label, categorias }) => (
             <Link
-              key={cat}
-              to={`/catalogo`}
+              key={label}
+              to={`/catalogo?categorias=${categorias}`}
               className="text-white text-xs font-heading font-semibold uppercase tracking-wider whitespace-nowrap hover:text-black transition-colors"
             >
-              {cat}
+              {label}
             </Link>
           ))}
         </div>

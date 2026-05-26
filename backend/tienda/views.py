@@ -26,7 +26,12 @@ class ProductoViewSet(viewsets.ReadOnlyModelViewSet):
         qs = Producto.objects.select_related("categoria", "marca")
         p = self.request.query_params
 
-        if cat := p.get("categoria"):
+        # Multi-category: ?categorias=1,2,3  (overrides single ?categoria)
+        if categorias := p.get("categorias"):
+            ids = [int(i) for i in categorias.split(",") if i.strip().isdigit()]
+            if ids:
+                qs = qs.filter(categoria_id__in=ids)
+        elif cat := p.get("categoria"):
             qs = qs.filter(categoria_id=cat)
         if marca := p.get("marca"):
             qs = qs.filter(marca_id=marca)
