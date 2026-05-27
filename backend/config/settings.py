@@ -104,8 +104,20 @@ CORS_ALLOWED_ORIGINS = config(
 )
 CORS_ALLOW_ALL_ORIGINS = config("CORS_ALLOW_ALL_ORIGINS", default=False, cast=bool)
 
+# En Railway, si hay dominio público configurado, permitir todos los orígenes
+# (el frontend tiene otro subdominio que no conocemos en tiempo de deploy)
+if _railway_domain and not CORS_ALLOW_ALL_ORIGINS:
+    CORS_ALLOW_ALL_ORIGINS = True
+
 # ─── CSRF / Cookies ──────────────────────────────────────────────────────────
 _csrf_origins = config("CSRF_TRUSTED_ORIGINS", default="")
 CSRF_TRUSTED_ORIGINS = [o.strip() for o in _csrf_origins.split(",") if o.strip()]
+
+# Auto-agregar el dominio Railway al CSRF trusted origins
+if _railway_domain:
+    _railway_https = f"https://{_railway_domain}"
+    if _railway_https not in CSRF_TRUSTED_ORIGINS:
+        CSRF_TRUSTED_ORIGINS.append(_railway_https)
+
 CSRF_COOKIE_SECURE = not DEBUG
 SESSION_COOKIE_SECURE = not DEBUG
