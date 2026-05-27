@@ -104,16 +104,11 @@ export default function CatalogoPage() {
       : null;
 
   // Grupos expandidos — auto-expande el grupo activo
-  const [abiertos, setAbiertos] = useState(() => {
-    const s = new Set();
-    if (grupoActivo) s.add(grupoActivo.label);
-    return s;
-  });
+  // Acordeón: solo un grupo abierto a la vez
+  const [grupoAbierto, setGrupoAbierto] = useState(grupoActivo?.label ?? null);
 
   useEffect(() => {
-    if (grupoActivo) {
-      setAbiertos((prev) => new Set([...prev, grupoActivo.label]));
-    }
+    if (grupoActivo) setGrupoAbierto(grupoActivo.label);
   }, [grupoActivo?.label]);
 
   const { data: marcas } = useApi("/marcas/");
@@ -157,12 +152,7 @@ export default function CatalogoPage() {
   }
 
   function toggleGrupo(label) {
-    setAbiertos((prev) => {
-      const next = new Set(prev);
-      if (next.has(label)) next.delete(label);
-      else next.add(label);
-      return next;
-    });
+    setGrupoAbierto((prev) => (prev === label ? null : label));
   }
 
   // ── Marcas ──────────────────────────────────────────────────
@@ -242,14 +232,14 @@ export default function CatalogoPage() {
                 {/* Grupos expandibles */}
                 <div className="space-y-0.5">
                   {GRUPOS.map((grupo) => {
-                    const abierto = abiertos.has(grupo.label);
+                    const abierto = grupoAbierto === grupo.label;
                     const activo  = esGrupoActivo(grupo);
                     return (
                       <div key={grupo.label}>
                         {/* Cabecera del grupo — clic expande Y filtra */}
                         <div className="flex items-center">
                           <button
-                            onClick={() => clickGrupo(grupo)}
+                            onClick={() => { clickGrupo(grupo); toggleGrupo(grupo.label); }}
                             className={`flex-1 flex items-center gap-2 px-3 py-2 rounded-l text-sm transition-colors ${
                               activo ? "text-fenk-red font-semibold" : "text-gray-300 hover:text-white"
                             }`}
@@ -257,21 +247,27 @@ export default function CatalogoPage() {
                             <span className="text-base leading-none">{grupo.icon}</span>
                             <span className="font-heading font-semibold">{grupo.label}</span>
                           </button>
-                          {/* Toggle expand/collapse separado */}
+                          {/* Flecha con rotación animada */}
                           <button
                             onClick={() => toggleGrupo(grupo.label)}
-                            className={`px-2 py-2 text-xs transition-all duration-200 ${
+                            className={`px-2 py-2 text-xs ${
                               activo ? "text-fenk-red" : "text-gray-600 hover:text-gray-400"
-                            } ${abierto ? "rotate-90" : ""} inline-block`}
-                            style={{ transform: abierto ? "rotate(90deg)" : "rotate(0deg)" }}
+                            }`}
+                            style={{
+                              transition: "transform 200ms ease",
+                              transform: abierto ? "rotate(90deg)" : "rotate(0deg)",
+                            }}
                           >
                             ▶
                           </button>
                         </div>
 
-                        {/* Subcategorías */}
-                        {abierto && (
-                          <div className="ml-4 border-l border-fenk-border pl-3 mb-1 space-y-0.5">
+                        {/* Subcategorías con animación acordeón */}
+                        <div
+                          className="overflow-hidden transition-all duration-200 ease-in-out"
+                          style={{ maxHeight: abierto ? "20rem" : "0" }}
+                        >
+                          <div className="ml-4 border-l border-fenk-border pl-3 pb-1 space-y-0.5">
                             {grupo.subs.map((sub) => {
                               const subAct = esSubActiva(sub);
                               return (
@@ -293,7 +289,7 @@ export default function CatalogoPage() {
                               );
                             })}
                           </div>
-                        )}
+                        </div>
                       </div>
                     );
                   })}
