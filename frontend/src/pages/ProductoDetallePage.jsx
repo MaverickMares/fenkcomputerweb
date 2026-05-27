@@ -13,7 +13,7 @@ export default function ProductoDetallePage() {
   const whatsapp = (config?.whatsapp || "+51999999999").replace(/\D/g, "");
   const msgWa = producto
     ? encodeURIComponent(
-        `Hola! Me interesa el producto: ${producto.nombre}\nPrecio: S/ ${parseFloat(producto.precio_soles).toFixed(2)} / USD $${parseFloat(producto.precio_usd).toFixed(2)}\n¿Está disponible?`
+        `Hola! Me interesa el producto ${producto.nombre} - USD $${parseFloat(producto.precio_usd).toFixed(2)}. ¿Tienen disponibilidad?`
       )
     : "";
 
@@ -60,7 +60,7 @@ export default function ProductoDetallePage() {
               <>
                 <span>›</span>
                 <Link
-                  to={`/catalogo?categoria=${producto.categoria}`}
+                  to={`/catalogo?categorias=${producto.categoria}`}
                   className="hover:text-fenk-red transition-colors"
                 >
                   {producto.categoria_nombre}

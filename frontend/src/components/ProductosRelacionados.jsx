@@ -3,7 +3,7 @@ import CardProducto from "./CardProducto";
 
 export default function ProductosRelacionados({ categoriaId, productoActualId }) {
   const { data: productos, cargando } = useApi(
-    categoriaId ? `/productos/?categoria=${categoriaId}` : null
+    categoriaId ? `/productos/?categorias=${categoriaId}` : null
   );
 
   const relacionados = productos?.filter((p) => p.id !== productoActualId).slice(0, 3);
