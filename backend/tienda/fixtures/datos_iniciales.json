@@ -1,606 +1,2667 @@
 [
-  {"model": "tienda.categoria", "pk": 1,  "fields": {"nombre": "Procesadores",       "descripcion": "CPUs AMD e Intel para todo tipo de build", "icono": "🔲"}},
-  {"model": "tienda.categoria", "pk": 2,  "fields": {"nombre": "Placas Madre",        "descripcion": "Motherboards ATX, mATX e ITX para cada socket", "icono": "🖥️"}},
-  {"model": "tienda.categoria", "pk": 3,  "fields": {"nombre": "Memoria RAM",         "descripcion": "DDR4 y DDR5 para máximo rendimiento", "icono": "💾"}},
-  {"model": "tienda.categoria", "pk": 4,  "fields": {"nombre": "Almacenamiento",      "descripcion": "SSD NVMe, SSD SATA y HDD", "icono": "💿"}},
-  {"model": "tienda.categoria", "pk": 5,  "fields": {"nombre": "Tarjetas de Video",   "descripcion": "GPUs NVIDIA y AMD para gaming y diseño", "icono": "🎮"}},
-  {"model": "tienda.categoria", "pk": 6,  "fields": {"nombre": "Fuentes de Poder",    "descripcion": "PSU certificadas 80+ para builds seguros", "icono": "⚡"}},
-  {"model": "tienda.categoria", "pk": 7,  "fields": {"nombre": "Gabinetes",           "descripcion": "Cases ATX, mATX e ITX con flujo de aire optimizado", "icono": "🗄️"}},
-  {"model": "tienda.categoria", "pk": 8,  "fields": {"nombre": "Monitores",           "descripcion": "Pantallas gaming y profesionales 4K, 144Hz+", "icono": "🖥️"}},
-  {"model": "tienda.categoria", "pk": 9,  "fields": {"nombre": "Teclados",            "descripcion": "Teclados mecánicos gaming y de oficina", "icono": "⌨️"}},
-  {"model": "tienda.categoria", "pk": 10, "fields": {"nombre": "Mouse",               "descripcion": "Ratones gaming de alta precisión", "icono": "🖱️"}},
-  {"model": "tienda.categoria", "pk": 11, "fields": {"nombre": "Auriculares",         "descripcion": "Headsets gaming con audio envolvente", "icono": "🎧"}},
-  {"model": "tienda.categoria", "pk": 12, "fields": {"nombre": "Mousepads",           "descripcion": "Pads de escritorio XL para gaming", "icono": "🟫"}},
-  {"model": "tienda.categoria", "pk": 13, "fields": {"nombre": "Estabilizadores UPS", "descripcion": "UPS y reguladores de voltaje para proteger tu equipo", "icono": "🔋"}},
-  {"model": "tienda.categoria", "pk": 14, "fields": {"nombre": "Micrófonos",          "descripcion": "Micrófonos USB para streaming y videollamadas", "icono": "🎤"}},
-  {"model": "tienda.categoria", "pk": 15, "fields": {"nombre": "Cámaras Web",         "descripcion": "Webcams HD y 4K para streaming y trabajo remoto", "icono": "📷"}},
-  {"model": "tienda.categoria", "pk": 16, "fields": {"nombre": "Laptops",             "descripcion": "Laptops gaming y productividad de alto rendimiento", "icono": "💻"}},
-
-  {"model": "tienda.marca", "pk": 1,  "fields": {"nombre": "AMD",              "logo": ""}},
-  {"model": "tienda.marca", "pk": 2,  "fields": {"nombre": "Intel",            "logo": ""}},
-  {"model": "tienda.marca", "pk": 3,  "fields": {"nombre": "ASUS",             "logo": ""}},
-  {"model": "tienda.marca", "pk": 4,  "fields": {"nombre": "MSI",              "logo": ""}},
-  {"model": "tienda.marca", "pk": 5,  "fields": {"nombre": "Gigabyte",         "logo": ""}},
-  {"model": "tienda.marca", "pk": 6,  "fields": {"nombre": "Corsair",          "logo": ""}},
-  {"model": "tienda.marca", "pk": 7,  "fields": {"nombre": "Kingston",         "logo": ""}},
-  {"model": "tienda.marca", "pk": 8,  "fields": {"nombre": "G.Skill",          "logo": ""}},
-  {"model": "tienda.marca", "pk": 9,  "fields": {"nombre": "Crucial",          "logo": ""}},
-  {"model": "tienda.marca", "pk": 10, "fields": {"nombre": "Samsung",          "logo": ""}},
-  {"model": "tienda.marca", "pk": 11, "fields": {"nombre": "WD",               "logo": ""}},
-  {"model": "tienda.marca", "pk": 12, "fields": {"nombre": "Seagate",          "logo": ""}},
-  {"model": "tienda.marca", "pk": 13, "fields": {"nombre": "Sapphire",         "logo": ""}},
-  {"model": "tienda.marca", "pk": 14, "fields": {"nombre": "EVGA",             "logo": ""}},
-  {"model": "tienda.marca", "pk": 15, "fields": {"nombre": "Seasonic",         "logo": ""}},
-  {"model": "tienda.marca", "pk": 16, "fields": {"nombre": "Cooler Master",    "logo": ""}},
-  {"model": "tienda.marca", "pk": 17, "fields": {"nombre": "Lian Li",          "logo": ""}},
-  {"model": "tienda.marca", "pk": 18, "fields": {"nombre": "NZXT",             "logo": ""}},
-  {"model": "tienda.marca", "pk": 19, "fields": {"nombre": "Fractal Design",   "logo": ""}},
-  {"model": "tienda.marca", "pk": 20, "fields": {"nombre": "LG",               "logo": ""}},
-  {"model": "tienda.marca", "pk": 21, "fields": {"nombre": "Redragon",         "logo": ""}},
-  {"model": "tienda.marca", "pk": 22, "fields": {"nombre": "Logitech",         "logo": ""}},
-  {"model": "tienda.marca", "pk": 23, "fields": {"nombre": "HyperX",           "logo": ""}},
-  {"model": "tienda.marca", "pk": 24, "fields": {"nombre": "APC",              "logo": ""}},
-  {"model": "tienda.marca", "pk": 25, "fields": {"nombre": "Blue Microphones", "logo": ""}},
-  {"model": "tienda.marca", "pk": 26, "fields": {"nombre": "Lenovo",           "logo": ""}},
-
-  {"model": "tienda.producto", "pk": 1, "fields": {
-    "nombre": "AMD Ryzen 5 7600X",
-    "descripcion": "Procesador AMD de 6 núcleos y 12 hilos en plataforma AM5. Frecuencia boost de 5.3GHz con soporte DDR5. Ideal para gaming 1080p y 1440p con excelente precio-rendimiento.",
-    "precio_usd": "199.00", "precio_soles": "742.00", "stock": 12,
-    "imagen": "", "categoria": 1, "marca": 1,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Núcleos": "6", "Hilos": "12", "Frecuencia base": "4.7 GHz", "Frecuencia boost": "5.3 GHz", "Socket": "AM5", "TDP": "105W", "Memoria": "DDR5", "Cache L3": "32MB"},
-    "creado": "2026-01-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 2, "fields": {
-    "nombre": "AMD Ryzen 9 5900X",
-    "descripcion": "Procesador AMD de 12 núcleos y 24 hilos en plataforma AM4. Frecuencia boost de 4.8GHz. Perfecto para gaming y productividad en plataforma AM4 con DDR4.",
-    "precio_usd": "189.00", "precio_soles": "705.00", "stock": 8,
-    "imagen": "", "categoria": 1, "marca": 1,
-    "es_nuevo": false, "es_oferta": true, "consultar_disponibilidad": false,
-    "especificaciones": {"Núcleos": "12", "Hilos": "24", "Frecuencia base": "3.7 GHz", "Frecuencia boost": "4.8 GHz", "Socket": "AM4", "TDP": "105W", "Memoria": "DDR4", "Cache L3": "64MB"},
-    "creado": "2026-01-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 3, "fields": {
-    "nombre": "Intel Core i5-14600K",
-    "descripcion": "Procesador Intel de 14ª generación con 14 núcleos (6P+8E) y frecuencia boost de 5.3GHz en socket LGA1700. Excelente para gaming y multitarea.",
-    "precio_usd": "229.00", "precio_soles": "854.00", "stock": 10,
-    "imagen": "", "categoria": 1, "marca": 2,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Núcleos": "14 (6P+8E)", "Hilos": "20", "Frecuencia base": "3.5 GHz", "Frecuencia boost": "5.3 GHz", "Socket": "LGA1700", "TDP": "125W", "Memoria": "DDR4/DDR5", "Cache L3": "24MB"},
-    "creado": "2026-01-15T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 4, "fields": {
-    "nombre": "Intel Core i9-14900K",
-    "descripcion": "Procesador Intel de 14ª generación con 24 núcleos y frecuencia boost de 6.0GHz. El rey del gaming y la productividad en plataforma LGA1700. Sin techo.",
-    "precio_usd": "549.00", "precio_soles": "2048.00", "stock": 5,
-    "imagen": "", "categoria": 1, "marca": 2,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Núcleos": "24 (8P+16E)", "Hilos": "32", "Frecuencia base": "3.2 GHz", "Frecuencia boost": "6.0 GHz", "Socket": "LGA1700", "TDP": "125W", "Memoria": "DDR4/DDR5", "Cache L3": "36MB"},
-    "creado": "2026-01-15T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 5, "fields": {
-    "nombre": "ASUS ROG Strix B650-A Gaming WiFi",
-    "descripcion": "Placa madre ATX socket AM5 con chipset B650. Soporte DDR5, PCIe 5.0, WiFi 6E integrado y diseño ROG. Compatible con AMD Ryzen 7000/8000 series.",
-    "precio_usd": "199.00", "precio_soles": "742.00", "stock": 9,
-    "imagen": "", "categoria": 2, "marca": 3,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Socket": "AM5", "Chipset": "AMD B650", "Form Factor": "ATX", "RAM": "4x DDR5 hasta 192GB", "PCIe": "PCIe 5.0 x16", "M.2": "3x M.2 PCIe 4.0", "Red": "2.5GbE + WiFi 6E"},
-    "creado": "2026-02-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 6, "fields": {
-    "nombre": "MSI MAG B550 Tomahawk",
-    "descripcion": "Placa madre ATX socket AM4 con chipset B550. Soporte DDR4, PCIe 4.0, diseño robusto y excelente VRM para procesadores AMD Ryzen 3000/5000 series.",
-    "precio_usd": "149.00", "precio_soles": "556.00", "stock": 11,
-    "imagen": "", "categoria": 2, "marca": 4,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Socket": "AM4", "Chipset": "AMD B550", "Form Factor": "ATX", "RAM": "4x DDR4 hasta 128GB", "PCIe": "PCIe 4.0 x16", "M.2": "2x M.2 PCIe 4.0", "Red": "2.5GbE"},
-    "creado": "2026-02-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 7, "fields": {
-    "nombre": "Gigabyte Z790 Aorus Elite AX",
-    "descripcion": "Placa madre ATX socket LGA1700 con chipset Z790. Soporte DDR5, PCIe 5.0, WiFi 6E y Thunderbolt 4. Para Intel Core i5/i7/i9 14ª generación.",
-    "precio_usd": "229.00", "precio_soles": "854.00", "stock": 7,
-    "imagen": "", "categoria": 2, "marca": 5,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Socket": "LGA1700", "Chipset": "Intel Z790", "Form Factor": "ATX", "RAM": "4x DDR5 hasta 192GB", "PCIe": "PCIe 5.0 x16", "M.2": "4x M.2 PCIe 4.0/5.0", "Red": "2.5GbE + WiFi 6E"},
-    "creado": "2026-02-05T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 8, "fields": {
-    "nombre": "ASUS Prime H610M-E DDR4",
-    "descripcion": "Placa madre mATX socket LGA1700 con chipset H610. Soporte DDR4, diseño compacto y confiable. Ideal para builds de entrada con procesadores Intel 12ª/13ª/14ª gen.",
-    "precio_usd": "99.00", "precio_soles": "369.00", "stock": 15,
-    "imagen": "", "categoria": 2, "marca": 3,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Socket": "LGA1700", "Chipset": "Intel H610", "Form Factor": "mATX", "RAM": "2x DDR4 hasta 64GB", "PCIe": "PCIe 4.0 x16", "M.2": "1x M.2 PCIe 3.0", "Red": "1GbE"},
-    "creado": "2026-02-05T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 9, "fields": {
-    "nombre": "Corsair Vengeance DDR5 32GB (2x16GB) 5600MHz",
-    "descripcion": "Kit de memoria RAM DDR5 5600MHz CL36 con soporte XMP 3.0 y EXPO. Alto rendimiento para plataformas AM5 e Intel LGA1700. Disipador de aluminio negro.",
-    "precio_usd": "89.00", "precio_soles": "332.00", "stock": 20,
-    "imagen": "", "categoria": 3, "marca": 6,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Capacidad": "32GB (2x16GB)", "Tipo": "DDR5", "Velocidad": "5600MHz", "Latencia": "CL36", "Voltaje": "1.25V", "Perfil": "XMP 3.0 / EXPO"},
-    "creado": "2026-02-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 10, "fields": {
-    "nombre": "Kingston Fury Beast DDR4 16GB (2x8GB) 3200MHz",
-    "descripcion": "Kit de memoria RAM DDR4 3200MHz CL16 con perfil XMP 2.0. Compatibilidad garantizada con plataformas AM4 e Intel. Sin disipador para fácil instalación.",
-    "precio_usd": "45.00", "precio_soles": "168.00", "stock": 25,
-    "imagen": "", "categoria": 3, "marca": 7,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Capacidad": "16GB (2x8GB)", "Tipo": "DDR4", "Velocidad": "3200MHz", "Latencia": "CL16", "Voltaje": "1.35V", "Perfil": "XMP 2.0"},
-    "creado": "2026-02-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 11, "fields": {
-    "nombre": "G.Skill Trident Z5 DDR5 64GB (2x32GB) 6000MHz",
-    "descripcion": "Kit elite de memoria DDR5 6000MHz CL30 con perfil XMP 3.0. El máximo rendimiento para workstations y gaming en plataformas AM5 e Intel LGA1700.",
-    "precio_usd": "189.00", "precio_soles": "705.00", "stock": 8,
-    "imagen": "", "categoria": 3, "marca": 8,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Capacidad": "64GB (2x32GB)", "Tipo": "DDR5", "Velocidad": "6000MHz", "Latencia": "CL30", "Voltaje": "1.35V", "Perfil": "XMP 3.0"},
-    "creado": "2026-02-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 12, "fields": {
-    "nombre": "Crucial DDR4 8GB 3200MHz",
-    "descripcion": "Memoria RAM DDR4 3200MHz de 8GB. Confiable y compatible con la mayoría de placas AM4 e Intel. Perfecta para builds de entrada y actualizaciones.",
-    "precio_usd": "25.00", "precio_soles": "93.00", "stock": 30,
-    "imagen": "", "categoria": 3, "marca": 9,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Capacidad": "8GB", "Tipo": "DDR4", "Velocidad": "3200MHz", "Latencia": "CL22", "Voltaje": "1.2V", "Perfil": "JEDEC"},
-    "creado": "2026-02-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 13, "fields": {
-    "nombre": "Samsung 970 EVO Plus 1TB NVMe M.2",
-    "descripcion": "SSD NVMe M.2 PCIe 3.0 con velocidades de lectura de 3,500 MB/s. El estándar dorado en almacenamiento NVMe para builds de gama media y alta.",
-    "precio_usd": "89.00", "precio_soles": "332.00", "stock": 18,
-    "imagen": "", "categoria": 4, "marca": 10,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Capacidad": "1TB", "Interfaz": "PCIe 3.0 x4 NVMe", "Factor forma": "M.2 2280", "Lectura seq.": "3,500 MB/s", "Escritura seq.": "3,300 MB/s", "TBW": "600 TB"},
-    "creado": "2026-03-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 14, "fields": {
-    "nombre": "WD Blue 2TB HDD 7200RPM",
-    "descripcion": "Disco duro 3.5\" de 2TB a 7200RPM para almacenamiento masivo. Ideal como secundario para guardar juegos, videos y archivos con mucha confiabilidad.",
-    "precio_usd": "49.00", "precio_soles": "183.00", "stock": 22,
-    "imagen": "", "categoria": 4, "marca": 11,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Capacidad": "2TB", "Interfaz": "SATA 6Gb/s", "Factor forma": "3.5\"", "Velocidad": "7200 RPM", "Cache": "256MB", "Garantía": "2 años"},
-    "creado": "2026-03-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 15, "fields": {
-    "nombre": "Seagate Barracuda 4TB HDD",
-    "descripcion": "Disco duro 3.5\" de 4TB SATA para almacenamiento masivo. Silencioso y eficiente, perfecto para archivar juegos, multimedia y backups con gran capacidad.",
-    "precio_usd": "79.00", "precio_soles": "295.00", "stock": 16,
-    "imagen": "", "categoria": 4, "marca": 12,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Capacidad": "4TB", "Interfaz": "SATA 6Gb/s", "Factor forma": "3.5\"", "Velocidad": "5400 RPM", "Cache": "256MB", "Garantía": "2 años"},
-    "creado": "2026-03-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 16, "fields": {
-    "nombre": "Kingston NV2 500GB SSD SATA",
-    "descripcion": "SSD SATA de 500GB factor forma 2.5\". Velocidades de lectura de 550 MB/s. Upgrade perfecto sobre HDD para reducir tiempos de carga al mínimo.",
-    "precio_usd": "39.00", "precio_soles": "145.00", "stock": 28,
-    "imagen": "", "categoria": 4, "marca": 7,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Capacidad": "500GB", "Interfaz": "SATA 6Gb/s", "Factor forma": "2.5\"", "Lectura seq.": "550 MB/s", "Escritura seq.": "500 MB/s", "Garantía": "3 años"},
-    "creado": "2026-03-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 17, "fields": {
-    "nombre": "ASUS ROG Strix RTX 4090 OC 24GB",
-    "descripcion": "La GPU más potente del mercado con 24GB GDDR6X. Gaming 4K sin compromiso, ray tracing máximo y DLSS 3 Frame Generation. Diseño ROG con triple ventilador.",
-    "precio_usd": "1999.00", "precio_soles": "7456.00", "stock": 3,
-    "imagen": "", "categoria": 5, "marca": 3,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"VRAM": "24GB GDDR6X", "Bus": "384-bit", "Boost Clock": "2640 MHz", "TDP": "450W", "Salidas": "3x DP 1.4a, 1x HDMI 2.1a", "Longitud": "357mm", "PSU mínima": "850W"},
-    "creado": "2026-03-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 18, "fields": {
-    "nombre": "MSI Gaming X Trio RTX 4070 12GB",
-    "descripcion": "GPU RTX 4070 12GB GDDR6X con cooling TORX Fan 5.0 de triple ventilador. Ideal para gaming 1440p con ray tracing y DLSS 3. Excelente relación precio-rendimiento.",
-    "precio_usd": "599.00", "precio_soles": "2234.00", "stock": 7,
-    "imagen": "", "categoria": 5, "marca": 4,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"VRAM": "12GB GDDR6X", "Bus": "192-bit", "Boost Clock": "2610 MHz", "TDP": "200W", "Salidas": "3x DP 1.4a, 1x HDMI 2.1a", "Longitud": "336mm", "PSU mínima": "650W"},
-    "creado": "2026-03-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 19, "fields": {
-    "nombre": "Sapphire Pulse AMD RX 7800 XT 16GB",
-    "descripcion": "GPU AMD RX 7800 XT con 16GB GDDR6. El mejor rendimiento AMD para 1440p gaming con FSR 3 y Radeon Chill. Triple ventilador Pulse de bajo ruido.",
-    "precio_usd": "499.00", "precio_soles": "1861.00", "stock": 6,
-    "imagen": "", "categoria": 5, "marca": 13,
-    "es_nuevo": false, "es_oferta": true, "consultar_disponibilidad": false,
-    "especificaciones": {"VRAM": "16GB GDDR6", "Bus": "256-bit", "Boost Clock": "2430 MHz", "TDP": "263W", "Salidas": "2x DP 2.1, 2x HDMI 2.1", "Longitud": "322mm", "PSU mínima": "600W"},
-    "creado": "2026-03-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 20, "fields": {
-    "nombre": "Gigabyte RTX 4060 Gaming OC 8GB",
-    "descripcion": "GPU RTX 4060 8GB GDDR6 con DLSS 3 y Reflex. Perfecta para gaming 1080p con alta tasa de frames. Diseño compacto de 221mm con doble ventilador Windforce.",
-    "precio_usd": "299.00", "precio_soles": "1115.00", "stock": 10,
-    "imagen": "", "categoria": 5, "marca": 5,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"VRAM": "8GB GDDR6", "Bus": "128-bit", "Boost Clock": "2475 MHz", "TDP": "115W", "Salidas": "2x DP 1.4a, 2x HDMI 2.1a", "Longitud": "221mm", "PSU mínima": "550W"},
-    "creado": "2026-03-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 21, "fields": {
-    "nombre": "Corsair RM850x 850W 80+ Gold Modular",
-    "descripcion": "Fuente de poder modular 850W certificada 80+ Gold. Cableado totalmente modular, operación silenciosa con Zero RPM Mode y garantía de 10 años.",
-    "precio_usd": "129.00", "precio_soles": "481.00", "stock": 14,
-    "imagen": "", "categoria": 6, "marca": 6,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Potencia": "850W", "Certificación": "80+ Gold", "Modular": "Totalmente modular", "Conectores PCIe": "4x 6+2 pin", "Ventilador": "135mm Magnetic Levitation", "Garantía": "10 años"},
-    "creado": "2026-03-15T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 22, "fields": {
-    "nombre": "EVGA SuperNOVA 650W 80+ Gold G6",
-    "descripcion": "Fuente modular 650W certificada 80+ Gold. Eficiencia superior al 90% con ventilador ECO Mode. Ideal para builds con GPUs de gama media como RTX 4070 y RX 7800 XT.",
-    "precio_usd": "89.00", "precio_soles": "332.00", "stock": 16,
-    "imagen": "", "categoria": 6, "marca": 14,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Potencia": "650W", "Certificación": "80+ Gold", "Modular": "Totalmente modular", "Conectores PCIe": "2x 6+2 pin", "Ventilador": "135mm", "Garantía": "10 años"},
-    "creado": "2026-03-15T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 23, "fields": {
-    "nombre": "Seasonic Focus GX-1000W 80+ Gold",
-    "descripcion": "Fuente premium de 1000W certificada 80+ Gold. Totalmente modular con control Hybrid Fan para operación silenciosa. Para builds extremos con RTX 4090 y overclocking.",
-    "precio_usd": "179.00", "precio_soles": "668.00", "stock": 6,
-    "imagen": "", "categoria": 6, "marca": 15,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Potencia": "1000W", "Certificación": "80+ Gold", "Modular": "Totalmente modular", "Conectores PCIe": "6x 6+2 pin", "Ventilador": "120mm Fluid Dynamic", "Garantía": "10 años"},
-    "creado": "2026-03-15T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 24, "fields": {
-    "nombre": "Cooler Master MWE 550W 80+ Bronze",
-    "descripcion": "Fuente de poder 550W certificada 80+ Bronze. Diseño semi-modular con buena eficiencia energética. Perfecta para builds de entrada con GTX/RTX serie 60.",
-    "precio_usd": "59.00", "precio_soles": "220.00", "stock": 20,
-    "imagen": "", "categoria": 6, "marca": 16,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Potencia": "550W", "Certificación": "80+ Bronze", "Modular": "Semi-modular", "Conectores PCIe": "2x 6+2 pin", "Ventilador": "120mm", "Garantía": "5 años"},
-    "creado": "2026-03-15T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 25, "fields": {
-    "nombre": "Lian Li PC-O11 Dynamic EVO ATX",
-    "descripcion": "Gabinete ATX premium con diseño dual-chamber. Excelente flujo de aire para hasta 3 radiadores. Soporte para placas E-ATX, ATX, mATX e ITX con panel lateral de vidrio.",
-    "precio_usd": "149.00", "precio_soles": "556.00", "stock": 8,
-    "imagen": "", "categoria": 7, "marca": 17,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Form Factor": "ATX (E-ATX/ATX/mATX/ITX)", "Material": "Aluminio + vidrio templado", "Bahías": "2x 2.5\", 2x 3.5\"", "Ventiladores incl.": "Ninguno", "Radiador max.": "360mm top/side/bottom", "GPU max.": "420mm", "PSU max.": "220mm"},
-    "creado": "2026-04-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 26, "fields": {
-    "nombre": "NZXT H510 Flow mATX",
-    "descripcion": "Gabinete mATX compacto con panel frontal mesh para máximo flujo de aire. Soporte para placas mATX e ITX. Diseño limpio y minimalista con panel lateral de vidrio.",
-    "precio_usd": "79.00", "precio_soles": "295.00", "stock": 12,
-    "imagen": "", "categoria": 7, "marca": 18,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Form Factor": "mATX/ITX", "Material": "Acero + vidrio templado", "Bahías": "3x 2.5\", 1x 3.5\"", "Ventiladores incl.": "1x 140mm frontal", "Radiador max.": "240mm frontal", "GPU max.": "325mm", "PSU max.": "180mm"},
-    "creado": "2026-04-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 27, "fields": {
-    "nombre": "Fractal Design Pop Air ATX",
-    "descripcion": "Gabinete ATX con panel frontal mesh de alta permeabilidad. Incluye ventiladores PWM de 140mm. Soporte para ATX y mATX con diseño moderno y práctico.",
-    "precio_usd": "89.00", "precio_soles": "332.00", "stock": 10,
-    "imagen": "", "categoria": 7, "marca": 19,
-    "es_nuevo": false, "es_oferta": true, "consultar_disponibilidad": false,
-    "especificaciones": {"Form Factor": "ATX/mATX/ITX", "Material": "Acero + vidrio templado", "Bahías": "2x 2.5\", 2x 3.5\"", "Ventiladores incl.": "3x 140mm", "Radiador max.": "360mm frontal", "GPU max.": "467mm", "PSU max.": "250mm"},
-    "creado": "2026-04-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 28, "fields": {
-    "nombre": "Cooler Master MasterBox Q300L mATX",
-    "descripcion": "Gabinete mATX compacto y versátil con panel magnético dust filter. Soporte para mATX e ITX. Múltiples configuraciones de ventiladores y radiadores.",
-    "precio_usd": "49.00", "precio_soles": "183.00", "stock": 18,
-    "imagen": "", "categoria": 7, "marca": 16,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Form Factor": "mATX/ITX", "Material": "Acero", "Bahías": "2x 2.5\", 2x 3.5\"", "Ventiladores incl.": "1x 120mm trasero", "Radiador max.": "240mm frontal/top", "GPU max.": "360mm", "PSU max.": "180mm"},
-    "creado": "2026-04-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 29, "fields": {
-    "nombre": "LG 27\" 4K IPS 144Hz UltraGear",
-    "descripcion": "Monitor gaming 4K UHD con panel IPS Nano Color y 144Hz. Compatible con NVIDIA G-Sync y AMD FreeSync Premium. HDMI 2.1 para consolas next-gen.",
-    "precio_usd": "399.00", "precio_soles": "1488.00", "stock": 5,
-    "imagen": "", "categoria": 8, "marca": 20,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Tamaño": "27\"", "Resolución": "3840x2160 (4K UHD)", "Panel": "IPS Nano Color", "Frecuencia": "144Hz", "Tiempo respuesta": "1ms GtG", "HDR": "VESA DisplayHDR 400", "Entradas": "2x HDMI 2.1, 1x DP 1.4"},
-    "creado": "2026-04-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 30, "fields": {
-    "nombre": "Teclado Mecánico Redragon K552 Kumara RGB",
-    "descripcion": "Teclado mecánico TKL (87 teclas) con switches ópticos Red. Iluminación RGB por tecla, estructura de aluminio y keycaps ABS doble inyección.",
-    "precio_usd": "49.00", "precio_soles": "183.00", "stock": 25,
-    "imagen": "", "categoria": 9, "marca": 21,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Tipo": "Mecánico TKL", "Switches": "Red (lineal)", "Iluminación": "RGB por tecla", "Conexión": "USB wired", "Keycaps": "ABS doble inyección", "Anti-ghosting": "Sí"},
-    "creado": "2026-04-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 31, "fields": {
-    "nombre": "Logitech G502 Hero Gaming Mouse",
-    "descripcion": "Mouse gaming con sensor HERO 25K de 100-25600 DPI. 11 botones programables, peso ajustable con 5 pesas de 3.6g y cable trenzado. El más popular en gaming.",
-    "precio_usd": "49.00", "precio_soles": "183.00", "stock": 22,
-    "imagen": "", "categoria": 10, "marca": 22,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Sensor": "HERO 25K", "DPI": "100 - 25,600", "Botones": "11 programables", "Peso ajustable": "Sí (5x 3.6g)", "Conexión": "USB wired", "Cable": "Trenzado 2.1m"},
-    "creado": "2026-04-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 32, "fields": {
-    "nombre": "HyperX Cloud II Gaming Headset",
-    "descripcion": "Auriculares gaming con drivers de 53mm y sonido virtual 7.1. Micrófono noise-cancelling desmontable y almohadillas de memory foam. Compatibles con PC, PS y Xbox.",
-    "precio_usd": "79.00", "precio_soles": "295.00", "stock": 14,
-    "imagen": "", "categoria": 11, "marca": 23,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Drivers": "53mm con neodimio", "Frecuencia": "15Hz - 25,000Hz", "Sonido": "Virtual 7.1", "Micrófono": "Noise-cancelling desmontable", "Conexión": "USB + 3.5mm", "Peso": "309g"},
-    "creado": "2026-04-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 33, "fields": {
-    "nombre": "Mousepad XL Redragon P003 Speed",
-    "descripcion": "Mousepad XL gaming de 880x300mm con superficie Speed para deslizamiento rápido. Base de goma antideslizante y bordes cosidos para mayor durabilidad.",
-    "precio_usd": "19.00", "precio_soles": "71.00", "stock": 35,
-    "imagen": "", "categoria": 12, "marca": 21,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Dimensiones": "880 x 300 x 3mm", "Superficie": "Speed (deslizamiento rápido)", "Material": "Microfibra + goma", "Bordes": "Cosidos", "Color": "Negro"},
-    "creado": "2026-04-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 34, "fields": {
-    "nombre": "APC Back-UPS 1200VA 720W",
-    "descripcion": "Estabilizador UPS de 1200VA / 720W con 8 tomas de corriente. Protección contra sobretensiones, picos y cortes de luz. Autonomía de 10-20 minutos para apagado seguro.",
-    "precio_usd": "89.00", "precio_soles": "332.00", "stock": 11,
-    "imagen": "", "categoria": 13, "marca": 24,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Capacidad": "1200VA / 720W", "Tomas": "8 (4 con respaldo)", "Autonomía": "10-20 min a carga media", "Batería": "Reemplazable 12V 7.2Ah", "Protección": "Sobretensión, picos, EMI", "Comunicación": "USB"},
-    "creado": "2026-04-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 35, "fields": {
-    "nombre": "Blue Yeti USB Microphone",
-    "descripcion": "Micrófono USB de condensador con 4 patrones polares (cardioide, omnidireccional, figura-8, estéreo). El estándar para streaming, podcasting y trabajo remoto.",
-    "precio_usd": "99.00", "precio_soles": "369.00", "stock": 9,
-    "imagen": "", "categoria": 14, "marca": 25,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Tipo": "Condensador USB", "Patrones polares": "4 (cardioide, omni, figura-8, estéreo)", "Frecuencia": "20Hz - 20kHz", "Resolución": "16-bit 48kHz", "Conexión": "USB-A", "Auricularejack": "3.5mm"},
-    "creado": "2026-04-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 36, "fields": {
-    "nombre": "Logitech C920 HD Pro Webcam",
-    "descripcion": "Cámara web Full HD 1080p a 30fps con autofocus y corrección de luz automática. Micrófono dual estéreo con reducción de ruido. Ideal para videollamadas y streaming.",
-    "precio_usd": "79.00", "precio_soles": "295.00", "stock": 13,
-    "imagen": "", "categoria": 15, "marca": 22,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Resolución": "1080p Full HD", "FPS": "30fps", "Ángulo de visión": "78°", "Enfoque": "Autofocus", "Micrófono": "Dual estéreo con noise reduction", "Conexión": "USB-A"},
-    "creado": "2026-04-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 37, "fields": {
-    "nombre": "ASUS ROG Strix G16 RTX 4070",
-    "descripcion": "Laptop gaming 16\" con Intel Core i9-14900HX, RTX 4070 8GB, 16GB DDR5 y 512GB NVMe. Pantalla QHD 240Hz. El flagship gaming portátil para los más exigentes.",
-    "precio_usd": "1299.00", "precio_soles": "4845.00", "stock": 4,
-    "imagen": "", "categoria": 16, "marca": 3,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"CPU": "Intel Core i9-14900HX", "GPU": "NVIDIA RTX 4070 8GB", "RAM": "16GB DDR5 4800MHz", "Almacenamiento": "512GB NVMe PCIe 4.0", "Pantalla": "16\" QHD 2560x1600 240Hz", "Batería": "90Wh", "SO": "Windows 11 Home"},
-    "creado": "2026-05-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 38, "fields": {
-    "nombre": "Lenovo Legion 5 Pro Ryzen 7 RTX 4060",
-    "descripcion": "Laptop gaming 16\" con AMD Ryzen 7 7745HX, RTX 4060 8GB y pantalla IPS QHD 165Hz. Excelente relación precio-rendimiento con cooling avanzado Legion Coldfront 5.0.",
-    "precio_usd": "999.00", "precio_soles": "3726.00", "stock": 6,
-    "imagen": "", "categoria": 16, "marca": 26,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"CPU": "AMD Ryzen 7 7745HX", "GPU": "NVIDIA RTX 4060 8GB", "RAM": "16GB DDR5", "Almacenamiento": "512GB NVMe", "Pantalla": "16\" QHD 2560x1600 165Hz", "Batería": "80Wh", "SO": "Windows 11 Home"},
-    "creado": "2026-05-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.componentepc", "pk": 1,  "fields": {"producto": 1,  "tipo": "CPU",            "socket_compatible": "AM5",     "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 2,  "fields": {"producto": 2,  "tipo": "CPU",            "socket_compatible": "AM4",     "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 3,  "fields": {"producto": 3,  "tipo": "CPU",            "socket_compatible": "LGA1700", "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 4,  "fields": {"producto": 4,  "tipo": "CPU",            "socket_compatible": "LGA1700", "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 5,  "fields": {"producto": 5,  "tipo": "PLACA",          "socket_compatible": "AM5",     "tipo_ram_compatible": "DDR5", "watts_recomendados": 0,    "form_factor": "ATX"}},
-  {"model": "tienda.componentepc", "pk": 6,  "fields": {"producto": 6,  "tipo": "PLACA",          "socket_compatible": "AM4",     "tipo_ram_compatible": "DDR4", "watts_recomendados": 0,    "form_factor": "ATX"}},
-  {"model": "tienda.componentepc", "pk": 7,  "fields": {"producto": 7,  "tipo": "PLACA",          "socket_compatible": "LGA1700", "tipo_ram_compatible": "DDR5", "watts_recomendados": 0,    "form_factor": "ATX"}},
-  {"model": "tienda.componentepc", "pk": 8,  "fields": {"producto": 8,  "tipo": "PLACA",          "socket_compatible": "LGA1700", "tipo_ram_compatible": "DDR4", "watts_recomendados": 0,    "form_factor": "mATX"}},
-  {"model": "tienda.componentepc", "pk": 9,  "fields": {"producto": 9,  "tipo": "RAM",            "socket_compatible": "",        "tipo_ram_compatible": "DDR5", "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 10, "fields": {"producto": 10, "tipo": "RAM",            "socket_compatible": "",        "tipo_ram_compatible": "DDR4", "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 11, "fields": {"producto": 11, "tipo": "RAM",            "socket_compatible": "",        "tipo_ram_compatible": "DDR5", "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 12, "fields": {"producto": 12, "tipo": "RAM",            "socket_compatible": "",        "tipo_ram_compatible": "DDR4", "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 13, "fields": {"producto": 13, "tipo": "ALMACENAMIENTO", "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 14, "fields": {"producto": 14, "tipo": "ALMACENAMIENTO", "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 15, "fields": {"producto": 15, "tipo": "ALMACENAMIENTO", "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 16, "fields": {"producto": 16, "tipo": "ALMACENAMIENTO", "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 17, "fields": {"producto": 17, "tipo": "GPU",            "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 850,  "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 18, "fields": {"producto": 18, "tipo": "GPU",            "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 650,  "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 19, "fields": {"producto": 19, "tipo": "GPU",            "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 600,  "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 20, "fields": {"producto": 20, "tipo": "GPU",            "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 550,  "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 21, "fields": {"producto": 21, "tipo": "FUENTE",         "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 850,  "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 22, "fields": {"producto": 22, "tipo": "FUENTE",         "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 650,  "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 23, "fields": {"producto": 23, "tipo": "FUENTE",         "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 1000, "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 24, "fields": {"producto": 24, "tipo": "FUENTE",         "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 550,  "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 25, "fields": {"producto": 25, "tipo": "CASE",           "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": "ATX"}},
-  {"model": "tienda.componentepc", "pk": 26, "fields": {"producto": 26, "tipo": "CASE",           "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": "mATX"}},
-  {"model": "tienda.componentepc", "pk": 27, "fields": {"producto": 27, "tipo": "CASE",           "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": "ATX"}},
-  {"model": "tienda.componentepc", "pk": 28, "fields": {"producto": 28, "tipo": "CASE",           "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": "mATX"}},
-  {"model": "tienda.componentepc", "pk": 29, "fields": {"producto": 29, "tipo": "MONITOR",        "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 30, "fields": {"producto": 30, "tipo": "TECLADO",        "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 31, "fields": {"producto": 31, "tipo": "MOUSE",          "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 32, "fields": {"producto": 32, "tipo": "AURICULARES",    "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 33, "fields": {"producto": 33, "tipo": "MOUSEPAD",       "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 34, "fields": {"producto": 34, "tipo": "UPS",            "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 35, "fields": {"producto": 35, "tipo": "MICROFONO",      "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 36, "fields": {"producto": 36, "tipo": "CAMARA",         "socket_compatible": "",        "tipo_ram_compatible": "",     "watts_recomendados": 0,    "form_factor": ""}},
-
-  {"model": "tienda.categoria", "pk": 17, "fields": {"nombre": "PCs Completas",  "descripcion": "Computadoras armadas y listas para usar, gaming y oficina", "icono": "🖥️"}},
-  {"model": "tienda.categoria", "pk": 18, "fields": {"nombre": "Sillas Gaming",   "descripcion": "Sillas ergonómicas gaming y de oficina de alta gama", "icono": "🪑"}},
-
-  {"model": "tienda.marca", "pk": 27, "fields": {"nombre": "FENK",       "logo": ""}},
-  {"model": "tienda.marca", "pk": 28, "fields": {"nombre": "DXRacer",    "logo": ""}},
-  {"model": "tienda.marca", "pk": 29, "fields": {"nombre": "SecretLab",  "logo": ""}},
-  {"model": "tienda.marca", "pk": 30, "fields": {"nombre": "Cougar",     "logo": ""}},
-
-  {"model": "tienda.producto", "pk": 39, "fields": {
-    "nombre": "MSI Katana 15 i7 RTX 4060 16GB",
-    "descripcion": "Laptop gaming 15.6\" con Intel Core i7-13620H, RTX 4060 8GB y 16GB DDR5. Pantalla FHD 144Hz. Excelente relación precio-rendimiento con cooling Cooler Boost 5.",
-    "precio_usd": "849.00", "precio_soles": "3167.00", "stock": 8,
-    "imagen": "", "categoria": 16, "marca": 4,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"CPU": "Intel Core i7-13620H", "GPU": "NVIDIA RTX 4060 8GB", "RAM": "16GB DDR5", "Almacenamiento": "512GB NVMe PCIe 4.0", "Pantalla": "15.6\" FHD 1920x1080 144Hz", "Batería": "53.5Wh", "SO": "Windows 11 Home"},
-    "creado": "2026-05-01T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 40, "fields": {
-    "nombre": "PC Gamer FENK Titan RTX 4090 32GB DDR5",
-    "descripcion": "PC gaming de élite: Intel i9-14900K + RTX 4090 24GB + 32GB DDR5 6000MHz + 2TB NVMe PCIe 5.0. Para gaming 4K sin compromisos y creación de contenido profesional.",
-    "precio_usd": "2499.00", "precio_soles": "9321.00", "stock": 2,
-    "imagen": "", "categoria": 17, "marca": 27,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"CPU": "Intel Core i9-14900K", "GPU": "NVIDIA RTX 4090 24GB", "RAM": "32GB DDR5 6000MHz", "Almacenamiento": "2TB NVMe PCIe 5.0", "Placa": "MSI Z790 Carbon WiFi", "Fuente": "1000W 80+ Platinum", "Gabinete": "Lian Li O11 Dynamic EVO", "SO": "Windows 11 Pro"},
-    "creado": "2026-05-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 41, "fields": {
-    "nombre": "PC Gamer FENK Pro RTX 4070 16GB DDR5",
-    "descripcion": "PC gaming de alto rendimiento: AMD Ryzen 7 7700X + RTX 4070 12GB + 16GB DDR5 + 1TB NVMe. La build perfecta para gaming 1440p y trabajo creativo.",
-    "precio_usd": "1499.00", "precio_soles": "5592.00", "stock": 4,
-    "imagen": "", "categoria": 17, "marca": 27,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"CPU": "AMD Ryzen 7 7700X", "GPU": "NVIDIA RTX 4070 12GB", "RAM": "16GB DDR5 5600MHz", "Almacenamiento": "1TB NVMe PCIe 4.0", "Placa": "ASUS ROG Strix B650-A", "Fuente": "750W 80+ Gold", "Gabinete": "NZXT H7 Flow", "SO": "Windows 11 Home"},
-    "creado": "2026-05-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 42, "fields": {
-    "nombre": "PC Oficina FENK Basic i5 8GB DDR4",
-    "descripcion": "PC de oficina confiable: Intel Core i5-12400 + 8GB DDR4 + 256GB SSD. Para trabajo diario, navegación y productividad con Windows 11 Pro incluido.",
-    "precio_usd": "499.00", "precio_soles": "1861.00", "stock": 10,
-    "imagen": "", "categoria": 17, "marca": 27,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"CPU": "Intel Core i5-12400", "GPU": "Intel UHD Graphics 730", "RAM": "8GB DDR4 3200MHz", "Almacenamiento": "256GB SSD NVMe", "Placa": "ASUS Prime H610M-K", "Fuente": "400W 80+ Bronze", "Gabinete": "Cooler Master MasterBox Q300L", "SO": "Windows 11 Pro"},
-    "creado": "2026-05-10T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 43, "fields": {
-    "nombre": "LG 27\" 2K QHD IPS 165Hz",
-    "descripcion": "Monitor gaming QHD 2560x1440 con panel IPS y 165Hz. AMD FreeSync Premium y compatible con G-Sync. Colores precisos sRGB 99% para gaming y diseño.",
-    "precio_usd": "279.00", "precio_soles": "1041.00", "stock": 7,
-    "imagen": "", "categoria": 8, "marca": 20,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Tamaño": "27\"", "Resolución": "2560x1440 (2K QHD)", "Panel": "IPS", "Frecuencia": "165Hz", "Tiempo respuesta": "1ms GtG", "Color": "sRGB 99%", "Entradas": "1x HDMI 2.0, 2x DP 1.4"},
-    "creado": "2026-04-15T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 44, "fields": {
-    "nombre": "Samsung 32\" Curvo 165Hz FHD Odyssey",
-    "descripcion": "Monitor gaming curvo 32\" FHD 1920x1080 con panel VA 165Hz y curvatura 1000R. Excelente contraste y colores para gaming inmersivo a precio accesible.",
-    "precio_usd": "279.00", "precio_soles": "1041.00", "stock": 8,
-    "imagen": "", "categoria": 8, "marca": 10,
-    "es_nuevo": false, "es_oferta": true, "consultar_disponibilidad": false,
-    "especificaciones": {"Tamaño": "32\"", "Resolución": "1920x1080 (FHD)", "Panel": "VA Curvo 1000R", "Frecuencia": "165Hz", "Tiempo respuesta": "1ms MPRT", "Contraste": "3000:1", "Entradas": "1x HDMI 1.4, 1x DP 1.2"},
-    "creado": "2026-04-15T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 45, "fields": {
-    "nombre": "Samsung 27\" 2K QHD 144Hz IPS",
-    "descripcion": "Monitor gaming QHD 27\" con panel IPS 144Hz y HDR10. Excelente para gaming competitivo y productividad. Compatible con AMD FreeSync Premium Pro.",
-    "precio_usd": "229.00", "precio_soles": "854.00", "stock": 9,
-    "imagen": "", "categoria": 8, "marca": 10,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Tamaño": "27\"", "Resolución": "2560x1440 (2K QHD)", "Panel": "IPS", "Frecuencia": "144Hz", "Tiempo respuesta": "1ms GtG", "HDR": "HDR10", "Entradas": "1x HDMI 2.0, 1x DP 1.2"},
-    "creado": "2026-04-15T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 46, "fields": {
-    "nombre": "MSI MAG 274QRF-QD 27\" 240Hz IPS 1ms",
-    "descripcion": "Monitor gaming IPS Quantum Dot 27\" QHD 240Hz con tiempo de respuesta de 1ms. Colores vibrantes con 95% DCI-P3. Para gaming competitivo en máxima fluidez.",
-    "precio_usd": "349.00", "precio_soles": "1302.00", "stock": 4,
-    "imagen": "", "categoria": 8, "marca": 4,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Tamaño": "27\"", "Resolución": "2560x1440 (QHD)", "Panel": "IPS Quantum Dot", "Frecuencia": "240Hz", "Tiempo respuesta": "1ms IPS", "Color": "95% DCI-P3", "Entradas": "1x HDMI 2.0b, 2x DP 1.4, 1x USB-C"},
-    "creado": "2026-04-15T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 47, "fields": {
-    "nombre": "MSI MAG 274QRFX 27\" 2K QHD 170Hz 1ms",
-    "descripcion": "Monitor gaming IPS 27\" QHD a 170Hz con 1ms de respuesta y G-Sync Compatible. Excelente opción entre rendimiento y calidad de imagen para gaming 1440p.",
-    "precio_usd": "319.00", "precio_soles": "1190.00", "stock": 5,
-    "imagen": "", "categoria": 8, "marca": 4,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Tamaño": "27\"", "Resolución": "2560x1440 (QHD)", "Panel": "IPS", "Frecuencia": "170Hz", "Tiempo respuesta": "1ms GtG", "HDR": "HDR400", "Entradas": "1x HDMI 2.0, 2x DP 1.4"},
-    "creado": "2026-04-15T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 48, "fields": {
-    "nombre": "Silla Gaming DXRacer Formula Negra/Roja",
-    "descripcion": "Silla gaming racing style con respaldo alto, soporte lumbar ajustable y reposacabezas con almohada. Tapizado PU premium y estructura de acero. Hasta 100kg.",
-    "precio_usd": "299.00", "precio_soles": "1115.00", "stock": 5,
-    "imagen": "", "categoria": 18, "marca": 28,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Material": "PU sintético", "Estructura": "Acero", "Peso max.": "100 kg", "Reclinación": "135°", "Reposabrazos": "3D ajustables", "Ruedas": "Nylon 60mm", "Garantía": "2 años"},
-    "creado": "2026-05-05T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 49, "fields": {
-    "nombre": "Silla Gaming SecretLab Titan Evo 2024",
-    "descripcion": "La silla gaming más premiada del mundo. Tapizado NEO Hybrid Leatherette, soporte lumbar magnético integrado, reposacabezas 4D y mecanismo 4-tilt. Hasta 130kg.",
-    "precio_usd": "449.00", "precio_soles": "1675.00", "stock": 3,
-    "imagen": "", "categoria": 18, "marca": 29,
-    "es_nuevo": true, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Material": "NEO Hybrid Leatherette", "Estructura": "Acero premium", "Peso max.": "130 kg", "Reclinación": "165°", "Reposabrazos": "4D cloud", "Lumbar": "Magnético integrado", "Garantía": "5 años"},
-    "creado": "2026-05-05T00:00:00Z"
-  }},
-
-  {"model": "tienda.producto", "pk": 50, "fields": {
-    "nombre": "Silla Gaming Cougar Armor One",
-    "descripcion": "Silla gaming con tapizado de alta calidad, soporte lumbar y cervical incluidos. Estructura metálica robusta, base de aluminio y ruedas silenciosas. Hasta 120kg.",
-    "precio_usd": "199.00", "precio_soles": "742.00", "stock": 8,
-    "imagen": "", "categoria": 18, "marca": 30,
-    "es_nuevo": false, "es_oferta": false, "consultar_disponibilidad": false,
-    "especificaciones": {"Material": "PU premium", "Estructura": "Acero + base aluminio", "Peso max.": "120 kg", "Reclinación": "180°", "Reposabrazos": "1D", "Ruedas": "Silenciosas 60mm", "Garantía": "1 año"},
-    "creado": "2026-05-05T00:00:00Z"
-  }},
-
-  {"model": "tienda.componentepc", "pk": 37, "fields": {"producto": 43, "tipo": "MONITOR", "socket_compatible": "", "tipo_ram_compatible": "", "watts_recomendados": 0, "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 38, "fields": {"producto": 44, "tipo": "MONITOR", "socket_compatible": "", "tipo_ram_compatible": "", "watts_recomendados": 0, "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 39, "fields": {"producto": 45, "tipo": "MONITOR", "socket_compatible": "", "tipo_ram_compatible": "", "watts_recomendados": 0, "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 40, "fields": {"producto": 46, "tipo": "MONITOR", "socket_compatible": "", "tipo_ram_compatible": "", "watts_recomendados": 0, "form_factor": ""}},
-  {"model": "tienda.componentepc", "pk": 41, "fields": {"producto": 47, "tipo": "MONITOR", "socket_compatible": "", "tipo_ram_compatible": "", "watts_recomendados": 0, "form_factor": ""}},
-
-  {"model": "tienda.configuracion", "pk": 1, "fields": {
-    "nombre_tienda": "FENK Computers",
-    "whatsapp": "+51999999999",
-    "direccion": "Lima, Perú",
-    "instagram": "@fenkcomputers",
-    "facebook": "/fenkcomputers",
-    "tiktok": "@fenkcomputers",
-    "youtube": ""
-  }}
+  {
+    "model": "tienda.categoria",
+    "pk": 1,
+    "fields": {
+      "nombre": "Procesadores",
+      "descripcion": "CPUs AMD e Intel para todo tipo de build",
+      "icono": "🔲"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 2,
+    "fields": {
+      "nombre": "Placas Madre",
+      "descripcion": "Motherboards ATX, mATX e ITX para cada socket",
+      "icono": "🖥️"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 3,
+    "fields": {
+      "nombre": "Memoria RAM",
+      "descripcion": "DDR4 y DDR5 para máximo rendimiento",
+      "icono": "💾"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 4,
+    "fields": {
+      "nombre": "Almacenamiento",
+      "descripcion": "SSD NVMe, SSD SATA y HDD",
+      "icono": "💿"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 5,
+    "fields": {
+      "nombre": "Tarjetas de Video",
+      "descripcion": "GPUs NVIDIA y AMD para gaming y diseño",
+      "icono": "🎮"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 6,
+    "fields": {
+      "nombre": "Fuentes de Poder",
+      "descripcion": "PSU certificadas 80+ para builds seguros",
+      "icono": "⚡"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 7,
+    "fields": {
+      "nombre": "Gabinetes",
+      "descripcion": "Cases ATX, mATX e ITX con flujo de aire optimizado",
+      "icono": "🗄️"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 8,
+    "fields": {
+      "nombre": "Monitores",
+      "descripcion": "Pantallas gaming y profesionales 4K, 144Hz+",
+      "icono": "🖥️"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 9,
+    "fields": {
+      "nombre": "Teclados",
+      "descripcion": "Teclados mecánicos gaming y de oficina",
+      "icono": "⌨️"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 10,
+    "fields": {
+      "nombre": "Mouse",
+      "descripcion": "Ratones gaming de alta precisión",
+      "icono": "🖱️"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 11,
+    "fields": {
+      "nombre": "Auriculares",
+      "descripcion": "Headsets gaming con audio envolvente",
+      "icono": "🎧"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 12,
+    "fields": {
+      "nombre": "Mousepads",
+      "descripcion": "Pads de escritorio XL para gaming",
+      "icono": "🟫"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 13,
+    "fields": {
+      "nombre": "Estabilizadores UPS",
+      "descripcion": "UPS y reguladores de voltaje para proteger tu equipo",
+      "icono": "🔋"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 14,
+    "fields": {
+      "nombre": "Micrófonos",
+      "descripcion": "Micrófonos USB para streaming y videollamadas",
+      "icono": "🎤"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 15,
+    "fields": {
+      "nombre": "Cámaras Web",
+      "descripcion": "Webcams HD y 4K para streaming y trabajo remoto",
+      "icono": "📷"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 16,
+    "fields": {
+      "nombre": "Laptops",
+      "descripcion": "Laptops gaming y productividad de alto rendimiento",
+      "icono": "💻"
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 1,
+    "fields": {
+      "nombre": "AMD",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 2,
+    "fields": {
+      "nombre": "Intel",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 3,
+    "fields": {
+      "nombre": "ASUS",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 4,
+    "fields": {
+      "nombre": "MSI",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 5,
+    "fields": {
+      "nombre": "Gigabyte",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 6,
+    "fields": {
+      "nombre": "Corsair",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 7,
+    "fields": {
+      "nombre": "Kingston",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 8,
+    "fields": {
+      "nombre": "G.Skill",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 9,
+    "fields": {
+      "nombre": "Crucial",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 10,
+    "fields": {
+      "nombre": "Samsung",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 11,
+    "fields": {
+      "nombre": "WD",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 12,
+    "fields": {
+      "nombre": "Seagate",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 13,
+    "fields": {
+      "nombre": "Sapphire",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 14,
+    "fields": {
+      "nombre": "EVGA",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 15,
+    "fields": {
+      "nombre": "Seasonic",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 16,
+    "fields": {
+      "nombre": "Cooler Master",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 17,
+    "fields": {
+      "nombre": "Lian Li",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 18,
+    "fields": {
+      "nombre": "NZXT",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 19,
+    "fields": {
+      "nombre": "Fractal Design",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 20,
+    "fields": {
+      "nombre": "LG",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 21,
+    "fields": {
+      "nombre": "Redragon",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 22,
+    "fields": {
+      "nombre": "Logitech",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 23,
+    "fields": {
+      "nombre": "HyperX",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 24,
+    "fields": {
+      "nombre": "APC",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 25,
+    "fields": {
+      "nombre": "Blue Microphones",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 26,
+    "fields": {
+      "nombre": "Lenovo",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 1,
+    "fields": {
+      "nombre": "AMD Ryzen 5 7600X",
+      "descripcion": "Procesador AMD de 6 núcleos y 12 hilos en plataforma AM5. Frecuencia boost de 5.3GHz con soporte DDR5. Ideal para gaming 1080p y 1440p con excelente precio-rendimiento.",
+      "precio_usd": "199.00",
+      "precio_soles": "742.00",
+      "stock": 12,
+      "imagen": "",
+      "categoria": 1,
+      "marca": 1,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Núcleos": "6",
+        "Hilos": "12",
+        "Frecuencia base": "4.7 GHz",
+        "Frecuencia boost": "5.3 GHz",
+        "Socket": "AM5",
+        "TDP": "105W",
+        "Memoria": "DDR5",
+        "Cache L3": "32MB"
+      },
+      "creado": "2026-01-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 2,
+    "fields": {
+      "nombre": "AMD Ryzen 9 5900X",
+      "descripcion": "Procesador AMD de 12 núcleos y 24 hilos en plataforma AM4. Frecuencia boost de 4.8GHz. Perfecto para gaming y productividad en plataforma AM4 con DDR4.",
+      "precio_usd": "189.00",
+      "precio_soles": "705.00",
+      "stock": 8,
+      "imagen": "",
+      "categoria": 1,
+      "marca": 1,
+      "es_nuevo": false,
+      "es_oferta": true,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Núcleos": "12",
+        "Hilos": "24",
+        "Frecuencia base": "3.7 GHz",
+        "Frecuencia boost": "4.8 GHz",
+        "Socket": "AM4",
+        "TDP": "105W",
+        "Memoria": "DDR4",
+        "Cache L3": "64MB"
+      },
+      "creado": "2026-01-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 3,
+    "fields": {
+      "nombre": "Intel Core i5-14600K",
+      "descripcion": "Procesador Intel de 14ª generación con 14 núcleos (6P+8E) y frecuencia boost de 5.3GHz en socket LGA1700. Excelente para gaming y multitarea.",
+      "precio_usd": "229.00",
+      "precio_soles": "854.00",
+      "stock": 10,
+      "imagen": "",
+      "categoria": 1,
+      "marca": 2,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Núcleos": "14 (6P+8E)",
+        "Hilos": "20",
+        "Frecuencia base": "3.5 GHz",
+        "Frecuencia boost": "5.3 GHz",
+        "Socket": "LGA1700",
+        "TDP": "125W",
+        "Memoria": "DDR4/DDR5",
+        "Cache L3": "24MB"
+      },
+      "creado": "2026-01-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 4,
+    "fields": {
+      "nombre": "Intel Core i9-14900K",
+      "descripcion": "Procesador Intel de 14ª generación con 24 núcleos y frecuencia boost de 6.0GHz. El rey del gaming y la productividad en plataforma LGA1700. Sin techo.",
+      "precio_usd": "549.00",
+      "precio_soles": "2048.00",
+      "stock": 5,
+      "imagen": "",
+      "categoria": 1,
+      "marca": 2,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Núcleos": "24 (8P+16E)",
+        "Hilos": "32",
+        "Frecuencia base": "3.2 GHz",
+        "Frecuencia boost": "6.0 GHz",
+        "Socket": "LGA1700",
+        "TDP": "125W",
+        "Memoria": "DDR4/DDR5",
+        "Cache L3": "36MB"
+      },
+      "creado": "2026-01-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 5,
+    "fields": {
+      "nombre": "ASUS ROG Strix B650-A Gaming WiFi",
+      "descripcion": "Placa madre ATX socket AM5 con chipset B650. Soporte DDR5, PCIe 5.0, WiFi 6E integrado y diseño ROG. Compatible con AMD Ryzen 7000/8000 series.",
+      "precio_usd": "199.00",
+      "precio_soles": "742.00",
+      "stock": 9,
+      "imagen": "",
+      "categoria": 2,
+      "marca": 3,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Socket": "AM5",
+        "Chipset": "AMD B650",
+        "Form Factor": "ATX",
+        "RAM": "4x DDR5 hasta 192GB",
+        "PCIe": "PCIe 5.0 x16",
+        "M.2": "3x M.2 PCIe 4.0",
+        "Red": "2.5GbE + WiFi 6E"
+      },
+      "creado": "2026-02-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 6,
+    "fields": {
+      "nombre": "MSI MAG B550 Tomahawk",
+      "descripcion": "Placa madre ATX socket AM4 con chipset B550. Soporte DDR4, PCIe 4.0, diseño robusto y excelente VRM para procesadores AMD Ryzen 3000/5000 series.",
+      "precio_usd": "149.00",
+      "precio_soles": "556.00",
+      "stock": 11,
+      "imagen": "",
+      "categoria": 2,
+      "marca": 4,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Socket": "AM4",
+        "Chipset": "AMD B550",
+        "Form Factor": "ATX",
+        "RAM": "4x DDR4 hasta 128GB",
+        "PCIe": "PCIe 4.0 x16",
+        "M.2": "2x M.2 PCIe 4.0",
+        "Red": "2.5GbE"
+      },
+      "creado": "2026-02-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 7,
+    "fields": {
+      "nombre": "Gigabyte Z790 Aorus Elite AX",
+      "descripcion": "Placa madre ATX socket LGA1700 con chipset Z790. Soporte DDR5, PCIe 5.0, WiFi 6E y Thunderbolt 4. Para Intel Core i5/i7/i9 14ª generación.",
+      "precio_usd": "229.00",
+      "precio_soles": "854.00",
+      "stock": 7,
+      "imagen": "",
+      "categoria": 2,
+      "marca": 5,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Socket": "LGA1700",
+        "Chipset": "Intel Z790",
+        "Form Factor": "ATX",
+        "RAM": "4x DDR5 hasta 192GB",
+        "PCIe": "PCIe 5.0 x16",
+        "M.2": "4x M.2 PCIe 4.0/5.0",
+        "Red": "2.5GbE + WiFi 6E"
+      },
+      "creado": "2026-02-05T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 8,
+    "fields": {
+      "nombre": "ASUS Prime H610M-E DDR4",
+      "descripcion": "Placa madre mATX socket LGA1700 con chipset H610. Soporte DDR4, diseño compacto y confiable. Ideal para builds de entrada con procesadores Intel 12ª/13ª/14ª gen.",
+      "precio_usd": "99.00",
+      "precio_soles": "369.00",
+      "stock": 15,
+      "imagen": "",
+      "categoria": 2,
+      "marca": 3,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Socket": "LGA1700",
+        "Chipset": "Intel H610",
+        "Form Factor": "mATX",
+        "RAM": "2x DDR4 hasta 64GB",
+        "PCIe": "PCIe 4.0 x16",
+        "M.2": "1x M.2 PCIe 3.0",
+        "Red": "1GbE"
+      },
+      "creado": "2026-02-05T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 9,
+    "fields": {
+      "nombre": "Corsair Vengeance DDR5 32GB (2x16GB) 5600MHz",
+      "descripcion": "Kit de memoria RAM DDR5 5600MHz CL36 con soporte XMP 3.0 y EXPO. Alto rendimiento para plataformas AM5 e Intel LGA1700. Disipador de aluminio negro.",
+      "precio_usd": "89.00",
+      "precio_soles": "332.00",
+      "stock": 20,
+      "imagen": "",
+      "categoria": 3,
+      "marca": 6,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Capacidad": "32GB (2x16GB)",
+        "Tipo": "DDR5",
+        "Velocidad": "5600MHz",
+        "Latencia": "CL36",
+        "Voltaje": "1.25V",
+        "Perfil": "XMP 3.0 / EXPO"
+      },
+      "creado": "2026-02-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 10,
+    "fields": {
+      "nombre": "Kingston Fury Beast DDR4 16GB (2x8GB) 3200MHz",
+      "descripcion": "Kit de memoria RAM DDR4 3200MHz CL16 con perfil XMP 2.0. Compatibilidad garantizada con plataformas AM4 e Intel. Sin disipador para fácil instalación.",
+      "precio_usd": "45.00",
+      "precio_soles": "168.00",
+      "stock": 25,
+      "imagen": "",
+      "categoria": 3,
+      "marca": 7,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Capacidad": "16GB (2x8GB)",
+        "Tipo": "DDR4",
+        "Velocidad": "3200MHz",
+        "Latencia": "CL16",
+        "Voltaje": "1.35V",
+        "Perfil": "XMP 2.0"
+      },
+      "creado": "2026-02-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 11,
+    "fields": {
+      "nombre": "G.Skill Trident Z5 DDR5 64GB (2x32GB) 6000MHz",
+      "descripcion": "Kit elite de memoria DDR5 6000MHz CL30 con perfil XMP 3.0. El máximo rendimiento para workstations y gaming en plataformas AM5 e Intel LGA1700.",
+      "precio_usd": "189.00",
+      "precio_soles": "705.00",
+      "stock": 8,
+      "imagen": "",
+      "categoria": 3,
+      "marca": 8,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Capacidad": "64GB (2x32GB)",
+        "Tipo": "DDR5",
+        "Velocidad": "6000MHz",
+        "Latencia": "CL30",
+        "Voltaje": "1.35V",
+        "Perfil": "XMP 3.0"
+      },
+      "creado": "2026-02-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 12,
+    "fields": {
+      "nombre": "Crucial DDR4 8GB 3200MHz",
+      "descripcion": "Memoria RAM DDR4 3200MHz de 8GB. Confiable y compatible con la mayoría de placas AM4 e Intel. Perfecta para builds de entrada y actualizaciones.",
+      "precio_usd": "25.00",
+      "precio_soles": "93.00",
+      "stock": 30,
+      "imagen": "",
+      "categoria": 3,
+      "marca": 9,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Capacidad": "8GB",
+        "Tipo": "DDR4",
+        "Velocidad": "3200MHz",
+        "Latencia": "CL22",
+        "Voltaje": "1.2V",
+        "Perfil": "JEDEC"
+      },
+      "creado": "2026-02-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 13,
+    "fields": {
+      "nombre": "Samsung 970 EVO Plus 1TB NVMe M.2",
+      "descripcion": "SSD NVMe M.2 PCIe 3.0 con velocidades de lectura de 3,500 MB/s. El estándar dorado en almacenamiento NVMe para builds de gama media y alta.",
+      "precio_usd": "89.00",
+      "precio_soles": "332.00",
+      "stock": 18,
+      "imagen": "",
+      "categoria": 4,
+      "marca": 10,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Capacidad": "1TB",
+        "Interfaz": "PCIe 3.0 x4 NVMe",
+        "Factor forma": "M.2 2280",
+        "Lectura seq.": "3,500 MB/s",
+        "Escritura seq.": "3,300 MB/s",
+        "TBW": "600 TB"
+      },
+      "creado": "2026-03-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 14,
+    "fields": {
+      "nombre": "WD Blue 2TB HDD 7200RPM",
+      "descripcion": "Disco duro 3.5\" de 2TB a 7200RPM para almacenamiento masivo. Ideal como secundario para guardar juegos, videos y archivos con mucha confiabilidad.",
+      "precio_usd": "49.00",
+      "precio_soles": "183.00",
+      "stock": 22,
+      "imagen": "",
+      "categoria": 4,
+      "marca": 11,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Capacidad": "2TB",
+        "Interfaz": "SATA 6Gb/s",
+        "Factor forma": "3.5\"",
+        "Velocidad": "7200 RPM",
+        "Cache": "256MB",
+        "Garantía": "2 años"
+      },
+      "creado": "2026-03-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 15,
+    "fields": {
+      "nombre": "Seagate Barracuda 4TB HDD",
+      "descripcion": "Disco duro 3.5\" de 4TB SATA para almacenamiento masivo. Silencioso y eficiente, perfecto para archivar juegos, multimedia y backups con gran capacidad.",
+      "precio_usd": "79.00",
+      "precio_soles": "295.00",
+      "stock": 16,
+      "imagen": "",
+      "categoria": 4,
+      "marca": 12,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Capacidad": "4TB",
+        "Interfaz": "SATA 6Gb/s",
+        "Factor forma": "3.5\"",
+        "Velocidad": "5400 RPM",
+        "Cache": "256MB",
+        "Garantía": "2 años"
+      },
+      "creado": "2026-03-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 16,
+    "fields": {
+      "nombre": "Kingston NV2 500GB SSD SATA",
+      "descripcion": "SSD SATA de 500GB factor forma 2.5\". Velocidades de lectura de 550 MB/s. Upgrade perfecto sobre HDD para reducir tiempos de carga al mínimo.",
+      "precio_usd": "39.00",
+      "precio_soles": "145.00",
+      "stock": 28,
+      "imagen": "",
+      "categoria": 4,
+      "marca": 7,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Capacidad": "500GB",
+        "Interfaz": "SATA 6Gb/s",
+        "Factor forma": "2.5\"",
+        "Lectura seq.": "550 MB/s",
+        "Escritura seq.": "500 MB/s",
+        "Garantía": "3 años"
+      },
+      "creado": "2026-03-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 17,
+    "fields": {
+      "nombre": "ASUS ROG Strix RTX 4090 OC 24GB",
+      "descripcion": "La GPU más potente del mercado con 24GB GDDR6X. Gaming 4K sin compromiso, ray tracing máximo y DLSS 3 Frame Generation. Diseño ROG con triple ventilador.",
+      "precio_usd": "1999.00",
+      "precio_soles": "7456.00",
+      "stock": 3,
+      "imagen": "",
+      "categoria": 5,
+      "marca": 3,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "VRAM": "24GB GDDR6X",
+        "Bus": "384-bit",
+        "Boost Clock": "2640 MHz",
+        "TDP": "450W",
+        "Salidas": "3x DP 1.4a, 1x HDMI 2.1a",
+        "Longitud": "357mm",
+        "PSU mínima": "850W"
+      },
+      "creado": "2026-03-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 18,
+    "fields": {
+      "nombre": "MSI Gaming X Trio RTX 4070 12GB",
+      "descripcion": "GPU RTX 4070 12GB GDDR6X con cooling TORX Fan 5.0 de triple ventilador. Ideal para gaming 1440p con ray tracing y DLSS 3. Excelente relación precio-rendimiento.",
+      "precio_usd": "599.00",
+      "precio_soles": "2234.00",
+      "stock": 7,
+      "imagen": "",
+      "categoria": 5,
+      "marca": 4,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "VRAM": "12GB GDDR6X",
+        "Bus": "192-bit",
+        "Boost Clock": "2610 MHz",
+        "TDP": "200W",
+        "Salidas": "3x DP 1.4a, 1x HDMI 2.1a",
+        "Longitud": "336mm",
+        "PSU mínima": "650W"
+      },
+      "creado": "2026-03-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 19,
+    "fields": {
+      "nombre": "Sapphire Pulse AMD RX 7800 XT 16GB",
+      "descripcion": "GPU AMD RX 7800 XT con 16GB GDDR6. El mejor rendimiento AMD para 1440p gaming con FSR 3 y Radeon Chill. Triple ventilador Pulse de bajo ruido.",
+      "precio_usd": "499.00",
+      "precio_soles": "1861.00",
+      "stock": 6,
+      "imagen": "",
+      "categoria": 5,
+      "marca": 13,
+      "es_nuevo": false,
+      "es_oferta": true,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "VRAM": "16GB GDDR6",
+        "Bus": "256-bit",
+        "Boost Clock": "2430 MHz",
+        "TDP": "263W",
+        "Salidas": "2x DP 2.1, 2x HDMI 2.1",
+        "Longitud": "322mm",
+        "PSU mínima": "600W"
+      },
+      "creado": "2026-03-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 20,
+    "fields": {
+      "nombre": "Gigabyte RTX 4060 Gaming OC 8GB",
+      "descripcion": "GPU RTX 4060 8GB GDDR6 con DLSS 3 y Reflex. Perfecta para gaming 1080p con alta tasa de frames. Diseño compacto de 221mm con doble ventilador Windforce.",
+      "precio_usd": "299.00",
+      "precio_soles": "1115.00",
+      "stock": 10,
+      "imagen": "",
+      "categoria": 5,
+      "marca": 5,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "VRAM": "8GB GDDR6",
+        "Bus": "128-bit",
+        "Boost Clock": "2475 MHz",
+        "TDP": "115W",
+        "Salidas": "2x DP 1.4a, 2x HDMI 2.1a",
+        "Longitud": "221mm",
+        "PSU mínima": "550W"
+      },
+      "creado": "2026-03-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 21,
+    "fields": {
+      "nombre": "Corsair RM850x 850W 80+ Gold Modular",
+      "descripcion": "Fuente de poder modular 850W certificada 80+ Gold. Cableado totalmente modular, operación silenciosa con Zero RPM Mode y garantía de 10 años.",
+      "precio_usd": "129.00",
+      "precio_soles": "481.00",
+      "stock": 14,
+      "imagen": "",
+      "categoria": 6,
+      "marca": 6,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Potencia": "850W",
+        "Certificación": "80+ Gold",
+        "Modular": "Totalmente modular",
+        "Conectores PCIe": "4x 6+2 pin",
+        "Ventilador": "135mm Magnetic Levitation",
+        "Garantía": "10 años"
+      },
+      "creado": "2026-03-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 22,
+    "fields": {
+      "nombre": "EVGA SuperNOVA 650W 80+ Gold G6",
+      "descripcion": "Fuente modular 650W certificada 80+ Gold. Eficiencia superior al 90% con ventilador ECO Mode. Ideal para builds con GPUs de gama media como RTX 4070 y RX 7800 XT.",
+      "precio_usd": "89.00",
+      "precio_soles": "332.00",
+      "stock": 16,
+      "imagen": "",
+      "categoria": 6,
+      "marca": 14,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Potencia": "650W",
+        "Certificación": "80+ Gold",
+        "Modular": "Totalmente modular",
+        "Conectores PCIe": "2x 6+2 pin",
+        "Ventilador": "135mm",
+        "Garantía": "10 años"
+      },
+      "creado": "2026-03-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 23,
+    "fields": {
+      "nombre": "Seasonic Focus GX-1000W 80+ Gold",
+      "descripcion": "Fuente premium de 1000W certificada 80+ Gold. Totalmente modular con control Hybrid Fan para operación silenciosa. Para builds extremos con RTX 4090 y overclocking.",
+      "precio_usd": "179.00",
+      "precio_soles": "668.00",
+      "stock": 6,
+      "imagen": "",
+      "categoria": 6,
+      "marca": 15,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Potencia": "1000W",
+        "Certificación": "80+ Gold",
+        "Modular": "Totalmente modular",
+        "Conectores PCIe": "6x 6+2 pin",
+        "Ventilador": "120mm Fluid Dynamic",
+        "Garantía": "10 años"
+      },
+      "creado": "2026-03-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 24,
+    "fields": {
+      "nombre": "Cooler Master MWE 550W 80+ Bronze",
+      "descripcion": "Fuente de poder 550W certificada 80+ Bronze. Diseño semi-modular con buena eficiencia energética. Perfecta para builds de entrada con GTX/RTX serie 60.",
+      "precio_usd": "59.00",
+      "precio_soles": "220.00",
+      "stock": 20,
+      "imagen": "",
+      "categoria": 6,
+      "marca": 16,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Potencia": "550W",
+        "Certificación": "80+ Bronze",
+        "Modular": "Semi-modular",
+        "Conectores PCIe": "2x 6+2 pin",
+        "Ventilador": "120mm",
+        "Garantía": "5 años"
+      },
+      "creado": "2026-03-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 25,
+    "fields": {
+      "nombre": "Lian Li PC-O11 Dynamic EVO ATX",
+      "descripcion": "Gabinete ATX premium con diseño dual-chamber. Excelente flujo de aire para hasta 3 radiadores. Soporte para placas E-ATX, ATX, mATX e ITX con panel lateral de vidrio.",
+      "precio_usd": "149.00",
+      "precio_soles": "556.00",
+      "stock": 8,
+      "imagen": "",
+      "categoria": 7,
+      "marca": 17,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Form Factor": "ATX (E-ATX/ATX/mATX/ITX)",
+        "Material": "Aluminio + vidrio templado",
+        "Bahías": "2x 2.5\", 2x 3.5\"",
+        "Ventiladores incl.": "Ninguno",
+        "Radiador max.": "360mm top/side/bottom",
+        "GPU max.": "420mm",
+        "PSU max.": "220mm"
+      },
+      "creado": "2026-04-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 26,
+    "fields": {
+      "nombre": "NZXT H510 Flow mATX",
+      "descripcion": "Gabinete mATX compacto con panel frontal mesh para máximo flujo de aire. Soporte para placas mATX e ITX. Diseño limpio y minimalista con panel lateral de vidrio.",
+      "precio_usd": "79.00",
+      "precio_soles": "295.00",
+      "stock": 12,
+      "imagen": "",
+      "categoria": 7,
+      "marca": 18,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Form Factor": "mATX/ITX",
+        "Material": "Acero + vidrio templado",
+        "Bahías": "3x 2.5\", 1x 3.5\"",
+        "Ventiladores incl.": "1x 140mm frontal",
+        "Radiador max.": "240mm frontal",
+        "GPU max.": "325mm",
+        "PSU max.": "180mm"
+      },
+      "creado": "2026-04-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 27,
+    "fields": {
+      "nombre": "Fractal Design Pop Air ATX",
+      "descripcion": "Gabinete ATX con panel frontal mesh de alta permeabilidad. Incluye ventiladores PWM de 140mm. Soporte para ATX y mATX con diseño moderno y práctico.",
+      "precio_usd": "89.00",
+      "precio_soles": "332.00",
+      "stock": 10,
+      "imagen": "",
+      "categoria": 7,
+      "marca": 19,
+      "es_nuevo": false,
+      "es_oferta": true,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Form Factor": "ATX/mATX/ITX",
+        "Material": "Acero + vidrio templado",
+        "Bahías": "2x 2.5\", 2x 3.5\"",
+        "Ventiladores incl.": "3x 140mm",
+        "Radiador max.": "360mm frontal",
+        "GPU max.": "467mm",
+        "PSU max.": "250mm"
+      },
+      "creado": "2026-04-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 28,
+    "fields": {
+      "nombre": "Cooler Master MasterBox Q300L mATX",
+      "descripcion": "Gabinete mATX compacto y versátil con panel magnético dust filter. Soporte para mATX e ITX. Múltiples configuraciones de ventiladores y radiadores.",
+      "precio_usd": "49.00",
+      "precio_soles": "183.00",
+      "stock": 18,
+      "imagen": "",
+      "categoria": 7,
+      "marca": 16,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Form Factor": "mATX/ITX",
+        "Material": "Acero",
+        "Bahías": "2x 2.5\", 2x 3.5\"",
+        "Ventiladores incl.": "1x 120mm trasero",
+        "Radiador max.": "240mm frontal/top",
+        "GPU max.": "360mm",
+        "PSU max.": "180mm"
+      },
+      "creado": "2026-04-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 29,
+    "fields": {
+      "nombre": "LG 27\" 4K IPS 144Hz UltraGear",
+      "descripcion": "Monitor gaming 4K UHD con panel IPS Nano Color y 144Hz. Compatible con NVIDIA G-Sync y AMD FreeSync Premium. HDMI 2.1 para consolas next-gen.",
+      "precio_usd": "399.00",
+      "precio_soles": "1488.00",
+      "stock": 5,
+      "imagen": "",
+      "categoria": 8,
+      "marca": 20,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tamaño": "27\"",
+        "Resolución": "3840x2160 (4K UHD)",
+        "Panel": "IPS Nano Color",
+        "Frecuencia": "144Hz",
+        "Tiempo respuesta": "1ms GtG",
+        "HDR": "VESA DisplayHDR 400",
+        "Entradas": "2x HDMI 2.1, 1x DP 1.4"
+      },
+      "creado": "2026-04-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 30,
+    "fields": {
+      "nombre": "Teclado Mecánico Redragon K552 Kumara RGB",
+      "descripcion": "Teclado mecánico TKL (87 teclas) con switches ópticos Red. Iluminación RGB por tecla, estructura de aluminio y keycaps ABS doble inyección.",
+      "precio_usd": "49.00",
+      "precio_soles": "183.00",
+      "stock": 25,
+      "imagen": "",
+      "categoria": 9,
+      "marca": 21,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Mecánico TKL",
+        "Switches": "Red (lineal)",
+        "Iluminación": "RGB por tecla",
+        "Conexión": "USB wired",
+        "Keycaps": "ABS doble inyección",
+        "Anti-ghosting": "Sí"
+      },
+      "creado": "2026-04-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 31,
+    "fields": {
+      "nombre": "Logitech G502 Hero Gaming Mouse",
+      "descripcion": "Mouse gaming con sensor HERO 25K de 100-25600 DPI. 11 botones programables, peso ajustable con 5 pesas de 3.6g y cable trenzado. El más popular en gaming.",
+      "precio_usd": "49.00",
+      "precio_soles": "183.00",
+      "stock": 22,
+      "imagen": "",
+      "categoria": 10,
+      "marca": 22,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Sensor": "HERO 25K",
+        "DPI": "100 - 25,600",
+        "Botones": "11 programables",
+        "Peso ajustable": "Sí (5x 3.6g)",
+        "Conexión": "USB wired",
+        "Cable": "Trenzado 2.1m"
+      },
+      "creado": "2026-04-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 32,
+    "fields": {
+      "nombre": "HyperX Cloud II Gaming Headset",
+      "descripcion": "Auriculares gaming con drivers de 53mm y sonido virtual 7.1. Micrófono noise-cancelling desmontable y almohadillas de memory foam. Compatibles con PC, PS y Xbox.",
+      "precio_usd": "79.00",
+      "precio_soles": "295.00",
+      "stock": 14,
+      "imagen": "",
+      "categoria": 11,
+      "marca": 23,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Drivers": "53mm con neodimio",
+        "Frecuencia": "15Hz - 25,000Hz",
+        "Sonido": "Virtual 7.1",
+        "Micrófono": "Noise-cancelling desmontable",
+        "Conexión": "USB + 3.5mm",
+        "Peso": "309g"
+      },
+      "creado": "2026-04-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 33,
+    "fields": {
+      "nombre": "Mousepad XL Redragon P003 Speed",
+      "descripcion": "Mousepad XL gaming de 880x300mm con superficie Speed para deslizamiento rápido. Base de goma antideslizante y bordes cosidos para mayor durabilidad.",
+      "precio_usd": "19.00",
+      "precio_soles": "71.00",
+      "stock": 35,
+      "imagen": "",
+      "categoria": 12,
+      "marca": 21,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Dimensiones": "880 x 300 x 3mm",
+        "Superficie": "Speed (deslizamiento rápido)",
+        "Material": "Microfibra + goma",
+        "Bordes": "Cosidos",
+        "Color": "Negro"
+      },
+      "creado": "2026-04-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 34,
+    "fields": {
+      "nombre": "APC Back-UPS 1200VA 720W",
+      "descripcion": "Estabilizador UPS de 1200VA / 720W con 8 tomas de corriente. Protección contra sobretensiones, picos y cortes de luz. Autonomía de 10-20 minutos para apagado seguro.",
+      "precio_usd": "89.00",
+      "precio_soles": "332.00",
+      "stock": 11,
+      "imagen": "",
+      "categoria": 13,
+      "marca": 24,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Capacidad": "1200VA / 720W",
+        "Tomas": "8 (4 con respaldo)",
+        "Autonomía": "10-20 min a carga media",
+        "Batería": "Reemplazable 12V 7.2Ah",
+        "Protección": "Sobretensión, picos, EMI",
+        "Comunicación": "USB"
+      },
+      "creado": "2026-04-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 35,
+    "fields": {
+      "nombre": "Blue Yeti USB Microphone",
+      "descripcion": "Micrófono USB de condensador con 4 patrones polares (cardioide, omnidireccional, figura-8, estéreo). El estándar para streaming, podcasting y trabajo remoto.",
+      "precio_usd": "99.00",
+      "precio_soles": "369.00",
+      "stock": 9,
+      "imagen": "",
+      "categoria": 14,
+      "marca": 25,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Condensador USB",
+        "Patrones polares": "4 (cardioide, omni, figura-8, estéreo)",
+        "Frecuencia": "20Hz - 20kHz",
+        "Resolución": "16-bit 48kHz",
+        "Conexión": "USB-A",
+        "Auricularejack": "3.5mm"
+      },
+      "creado": "2026-04-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 36,
+    "fields": {
+      "nombre": "Logitech C920 HD Pro Webcam",
+      "descripcion": "Cámara web Full HD 1080p a 30fps con autofocus y corrección de luz automática. Micrófono dual estéreo con reducción de ruido. Ideal para videollamadas y streaming.",
+      "precio_usd": "79.00",
+      "precio_soles": "295.00",
+      "stock": 13,
+      "imagen": "",
+      "categoria": 15,
+      "marca": 22,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Resolución": "1080p Full HD",
+        "FPS": "30fps",
+        "Ángulo de visión": "78°",
+        "Enfoque": "Autofocus",
+        "Micrófono": "Dual estéreo con noise reduction",
+        "Conexión": "USB-A"
+      },
+      "creado": "2026-04-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 37,
+    "fields": {
+      "nombre": "ASUS ROG Strix G16 RTX 4070",
+      "descripcion": "Laptop gaming 16\" con Intel Core i9-14900HX, RTX 4070 8GB, 16GB DDR5 y 512GB NVMe. Pantalla QHD 240Hz. El flagship gaming portátil para los más exigentes.",
+      "precio_usd": "1299.00",
+      "precio_soles": "4845.00",
+      "stock": 4,
+      "imagen": "",
+      "categoria": 16,
+      "marca": 3,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "CPU": "Intel Core i9-14900HX",
+        "GPU": "NVIDIA RTX 4070 8GB",
+        "RAM": "16GB DDR5 4800MHz",
+        "Almacenamiento": "512GB NVMe PCIe 4.0",
+        "Pantalla": "16\" QHD 2560x1600 240Hz",
+        "Batería": "90Wh",
+        "SO": "Windows 11 Home"
+      },
+      "creado": "2026-05-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 38,
+    "fields": {
+      "nombre": "Lenovo Legion 5 Pro Ryzen 7 RTX 4060",
+      "descripcion": "Laptop gaming 16\" con AMD Ryzen 7 7745HX, RTX 4060 8GB y pantalla IPS QHD 165Hz. Excelente relación precio-rendimiento con cooling avanzado Legion Coldfront 5.0.",
+      "precio_usd": "999.00",
+      "precio_soles": "3726.00",
+      "stock": 6,
+      "imagen": "",
+      "categoria": 16,
+      "marca": 26,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "CPU": "AMD Ryzen 7 7745HX",
+        "GPU": "NVIDIA RTX 4060 8GB",
+        "RAM": "16GB DDR5",
+        "Almacenamiento": "512GB NVMe",
+        "Pantalla": "16\" QHD 2560x1600 165Hz",
+        "Batería": "80Wh",
+        "SO": "Windows 11 Home"
+      },
+      "creado": "2026-05-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 1,
+    "fields": {
+      "producto": 1,
+      "tipo": "CPU",
+      "socket_compatible": "AM5",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 2,
+    "fields": {
+      "producto": 2,
+      "tipo": "CPU",
+      "socket_compatible": "AM4",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 3,
+    "fields": {
+      "producto": 3,
+      "tipo": "CPU",
+      "socket_compatible": "LGA1700",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 4,
+    "fields": {
+      "producto": 4,
+      "tipo": "CPU",
+      "socket_compatible": "LGA1700",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 5,
+    "fields": {
+      "producto": 5,
+      "tipo": "PLACA",
+      "socket_compatible": "AM5",
+      "tipo_ram_compatible": "DDR5",
+      "watts_recomendados": 0,
+      "form_factor": "ATX"
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 6,
+    "fields": {
+      "producto": 6,
+      "tipo": "PLACA",
+      "socket_compatible": "AM4",
+      "tipo_ram_compatible": "DDR4",
+      "watts_recomendados": 0,
+      "form_factor": "ATX"
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 7,
+    "fields": {
+      "producto": 7,
+      "tipo": "PLACA",
+      "socket_compatible": "LGA1700",
+      "tipo_ram_compatible": "DDR5",
+      "watts_recomendados": 0,
+      "form_factor": "ATX"
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 8,
+    "fields": {
+      "producto": 8,
+      "tipo": "PLACA",
+      "socket_compatible": "LGA1700",
+      "tipo_ram_compatible": "DDR4",
+      "watts_recomendados": 0,
+      "form_factor": "mATX"
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 9,
+    "fields": {
+      "producto": 9,
+      "tipo": "RAM",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "DDR5",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 10,
+    "fields": {
+      "producto": 10,
+      "tipo": "RAM",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "DDR4",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 11,
+    "fields": {
+      "producto": 11,
+      "tipo": "RAM",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "DDR5",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 12,
+    "fields": {
+      "producto": 12,
+      "tipo": "RAM",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "DDR4",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 13,
+    "fields": {
+      "producto": 13,
+      "tipo": "ALMACENAMIENTO",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 14,
+    "fields": {
+      "producto": 14,
+      "tipo": "ALMACENAMIENTO",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 15,
+    "fields": {
+      "producto": 15,
+      "tipo": "ALMACENAMIENTO",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 16,
+    "fields": {
+      "producto": 16,
+      "tipo": "ALMACENAMIENTO",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 17,
+    "fields": {
+      "producto": 17,
+      "tipo": "GPU",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 850,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 18,
+    "fields": {
+      "producto": 18,
+      "tipo": "GPU",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 650,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 19,
+    "fields": {
+      "producto": 19,
+      "tipo": "GPU",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 600,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 20,
+    "fields": {
+      "producto": 20,
+      "tipo": "GPU",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 550,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 21,
+    "fields": {
+      "producto": 21,
+      "tipo": "FUENTE",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 850,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 22,
+    "fields": {
+      "producto": 22,
+      "tipo": "FUENTE",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 650,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 23,
+    "fields": {
+      "producto": 23,
+      "tipo": "FUENTE",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 1000,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 24,
+    "fields": {
+      "producto": 24,
+      "tipo": "FUENTE",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 550,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 25,
+    "fields": {
+      "producto": 25,
+      "tipo": "CASE",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": "ATX"
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 26,
+    "fields": {
+      "producto": 26,
+      "tipo": "CASE",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": "mATX"
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 27,
+    "fields": {
+      "producto": 27,
+      "tipo": "CASE",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": "ATX"
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 28,
+    "fields": {
+      "producto": 28,
+      "tipo": "CASE",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": "mATX"
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 29,
+    "fields": {
+      "producto": 29,
+      "tipo": "MONITOR",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 30,
+    "fields": {
+      "producto": 30,
+      "tipo": "TECLADO",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 31,
+    "fields": {
+      "producto": 31,
+      "tipo": "MOUSE",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 32,
+    "fields": {
+      "producto": 32,
+      "tipo": "AURICULARES",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 33,
+    "fields": {
+      "producto": 33,
+      "tipo": "MOUSEPAD",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 34,
+    "fields": {
+      "producto": 34,
+      "tipo": "UPS",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 35,
+    "fields": {
+      "producto": 35,
+      "tipo": "MICROFONO",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 36,
+    "fields": {
+      "producto": 36,
+      "tipo": "CAMARA",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 17,
+    "fields": {
+      "nombre": "PCs Completas",
+      "descripcion": "Computadoras armadas y listas para usar, gaming y oficina",
+      "icono": "🖥️"
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 18,
+    "fields": {
+      "nombre": "Sillas Gaming",
+      "descripcion": "Sillas ergonómicas gaming y de oficina de alta gama",
+      "icono": "🪑"
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 27,
+    "fields": {
+      "nombre": "FENK",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 28,
+    "fields": {
+      "nombre": "DXRacer",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 29,
+    "fields": {
+      "nombre": "SecretLab",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 30,
+    "fields": {
+      "nombre": "Cougar",
+      "logo": ""
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 39,
+    "fields": {
+      "nombre": "MSI Katana 15 i7 RTX 4060 16GB",
+      "descripcion": "Laptop gaming 15.6\" con Intel Core i7-13620H, RTX 4060 8GB y 16GB DDR5. Pantalla FHD 144Hz. Excelente relación precio-rendimiento con cooling Cooler Boost 5.",
+      "precio_usd": "849.00",
+      "precio_soles": "3167.00",
+      "stock": 8,
+      "imagen": "",
+      "categoria": 16,
+      "marca": 4,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "CPU": "Intel Core i7-13620H",
+        "GPU": "NVIDIA RTX 4060 8GB",
+        "RAM": "16GB DDR5",
+        "Almacenamiento": "512GB NVMe PCIe 4.0",
+        "Pantalla": "15.6\" FHD 1920x1080 144Hz",
+        "Batería": "53.5Wh",
+        "SO": "Windows 11 Home"
+      },
+      "creado": "2026-05-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 40,
+    "fields": {
+      "nombre": "PC Gamer FENK Titan RTX 4090 32GB DDR5",
+      "descripcion": "PC gaming de élite: Intel i9-14900K + RTX 4090 24GB + 32GB DDR5 6000MHz + 2TB NVMe PCIe 5.0. Para gaming 4K sin compromisos y creación de contenido profesional.",
+      "precio_usd": "2499.00",
+      "precio_soles": "9321.00",
+      "stock": 2,
+      "imagen": "",
+      "categoria": 17,
+      "marca": 27,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "CPU": "Intel Core i9-14900K",
+        "GPU": "NVIDIA RTX 4090 24GB",
+        "RAM": "32GB DDR5 6000MHz",
+        "Almacenamiento": "2TB NVMe PCIe 5.0",
+        "Placa": "MSI Z790 Carbon WiFi",
+        "Fuente": "1000W 80+ Platinum",
+        "Gabinete": "Lian Li O11 Dynamic EVO",
+        "SO": "Windows 11 Pro"
+      },
+      "creado": "2026-05-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 41,
+    "fields": {
+      "nombre": "PC Gamer FENK Pro RTX 4070 16GB DDR5",
+      "descripcion": "PC gaming de alto rendimiento: AMD Ryzen 7 7700X + RTX 4070 12GB + 16GB DDR5 + 1TB NVMe. La build perfecta para gaming 1440p y trabajo creativo.",
+      "precio_usd": "1499.00",
+      "precio_soles": "5592.00",
+      "stock": 4,
+      "imagen": "",
+      "categoria": 17,
+      "marca": 27,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "CPU": "AMD Ryzen 7 7700X",
+        "GPU": "NVIDIA RTX 4070 12GB",
+        "RAM": "16GB DDR5 5600MHz",
+        "Almacenamiento": "1TB NVMe PCIe 4.0",
+        "Placa": "ASUS ROG Strix B650-A",
+        "Fuente": "750W 80+ Gold",
+        "Gabinete": "NZXT H7 Flow",
+        "SO": "Windows 11 Home"
+      },
+      "creado": "2026-05-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 42,
+    "fields": {
+      "nombre": "PC Oficina FENK Basic i5 8GB DDR4",
+      "descripcion": "PC de oficina confiable: Intel Core i5-12400 + 8GB DDR4 + 256GB SSD. Para trabajo diario, navegación y productividad con Windows 11 Pro incluido.",
+      "precio_usd": "499.00",
+      "precio_soles": "1861.00",
+      "stock": 10,
+      "imagen": "",
+      "categoria": 17,
+      "marca": 27,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "8GB DDR4 3200MHz",
+        "Almacenamiento": "256GB SSD NVMe",
+        "Placa": "ASUS Prime H610M-K",
+        "Fuente": "400W 80+ Bronze",
+        "Gabinete": "Cooler Master MasterBox Q300L",
+        "SO": "Windows 11 Pro"
+      },
+      "creado": "2026-05-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 43,
+    "fields": {
+      "nombre": "LG 27\" 2K QHD IPS 165Hz",
+      "descripcion": "Monitor gaming QHD 2560x1440 con panel IPS y 165Hz. AMD FreeSync Premium y compatible con G-Sync. Colores precisos sRGB 99% para gaming y diseño.",
+      "precio_usd": "279.00",
+      "precio_soles": "1041.00",
+      "stock": 7,
+      "imagen": "",
+      "categoria": 8,
+      "marca": 20,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tamaño": "27\"",
+        "Resolución": "2560x1440 (2K QHD)",
+        "Panel": "IPS",
+        "Frecuencia": "165Hz",
+        "Tiempo respuesta": "1ms GtG",
+        "Color": "sRGB 99%",
+        "Entradas": "1x HDMI 2.0, 2x DP 1.4"
+      },
+      "creado": "2026-04-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 44,
+    "fields": {
+      "nombre": "Samsung 32\" Curvo 165Hz FHD Odyssey",
+      "descripcion": "Monitor gaming curvo 32\" FHD 1920x1080 con panel VA 165Hz y curvatura 1000R. Excelente contraste y colores para gaming inmersivo a precio accesible.",
+      "precio_usd": "279.00",
+      "precio_soles": "1041.00",
+      "stock": 8,
+      "imagen": "",
+      "categoria": 8,
+      "marca": 10,
+      "es_nuevo": false,
+      "es_oferta": true,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tamaño": "32\"",
+        "Resolución": "1920x1080 (FHD)",
+        "Panel": "VA Curvo 1000R",
+        "Frecuencia": "165Hz",
+        "Tiempo respuesta": "1ms MPRT",
+        "Contraste": "3000:1",
+        "Entradas": "1x HDMI 1.4, 1x DP 1.2"
+      },
+      "creado": "2026-04-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 45,
+    "fields": {
+      "nombre": "Samsung 27\" 2K QHD 144Hz IPS",
+      "descripcion": "Monitor gaming QHD 27\" con panel IPS 144Hz y HDR10. Excelente para gaming competitivo y productividad. Compatible con AMD FreeSync Premium Pro.",
+      "precio_usd": "229.00",
+      "precio_soles": "854.00",
+      "stock": 9,
+      "imagen": "",
+      "categoria": 8,
+      "marca": 10,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tamaño": "27\"",
+        "Resolución": "2560x1440 (2K QHD)",
+        "Panel": "IPS",
+        "Frecuencia": "144Hz",
+        "Tiempo respuesta": "1ms GtG",
+        "HDR": "HDR10",
+        "Entradas": "1x HDMI 2.0, 1x DP 1.2"
+      },
+      "creado": "2026-04-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 46,
+    "fields": {
+      "nombre": "MSI MAG 274QRF-QD 27\" 240Hz IPS 1ms",
+      "descripcion": "Monitor gaming IPS Quantum Dot 27\" QHD 240Hz con tiempo de respuesta de 1ms. Colores vibrantes con 95% DCI-P3. Para gaming competitivo en máxima fluidez.",
+      "precio_usd": "349.00",
+      "precio_soles": "1302.00",
+      "stock": 4,
+      "imagen": "",
+      "categoria": 8,
+      "marca": 4,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tamaño": "27\"",
+        "Resolución": "2560x1440 (QHD)",
+        "Panel": "IPS Quantum Dot",
+        "Frecuencia": "240Hz",
+        "Tiempo respuesta": "1ms IPS",
+        "Color": "95% DCI-P3",
+        "Entradas": "1x HDMI 2.0b, 2x DP 1.4, 1x USB-C"
+      },
+      "creado": "2026-04-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 47,
+    "fields": {
+      "nombre": "MSI MAG 274QRFX 27\" 2K QHD 170Hz 1ms",
+      "descripcion": "Monitor gaming IPS 27\" QHD a 170Hz con 1ms de respuesta y G-Sync Compatible. Excelente opción entre rendimiento y calidad de imagen para gaming 1440p.",
+      "precio_usd": "319.00",
+      "precio_soles": "1190.00",
+      "stock": 5,
+      "imagen": "",
+      "categoria": 8,
+      "marca": 4,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tamaño": "27\"",
+        "Resolución": "2560x1440 (QHD)",
+        "Panel": "IPS",
+        "Frecuencia": "170Hz",
+        "Tiempo respuesta": "1ms GtG",
+        "HDR": "HDR400",
+        "Entradas": "1x HDMI 2.0, 2x DP 1.4"
+      },
+      "creado": "2026-04-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 48,
+    "fields": {
+      "nombre": "Silla Gaming DXRacer Formula Negra/Roja",
+      "descripcion": "Silla gaming racing style con respaldo alto, soporte lumbar ajustable y reposacabezas con almohada. Tapizado PU premium y estructura de acero. Hasta 100kg.",
+      "precio_usd": "299.00",
+      "precio_soles": "1115.00",
+      "stock": 5,
+      "imagen": "",
+      "categoria": 18,
+      "marca": 28,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Material": "PU sintético",
+        "Estructura": "Acero",
+        "Peso max.": "100 kg",
+        "Reclinación": "135°",
+        "Reposabrazos": "3D ajustables",
+        "Ruedas": "Nylon 60mm",
+        "Garantía": "2 años"
+      },
+      "creado": "2026-05-05T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 49,
+    "fields": {
+      "nombre": "Silla Gaming SecretLab Titan Evo 2024",
+      "descripcion": "La silla gaming más premiada del mundo. Tapizado NEO Hybrid Leatherette, soporte lumbar magnético integrado, reposacabezas 4D y mecanismo 4-tilt. Hasta 130kg.",
+      "precio_usd": "449.00",
+      "precio_soles": "1675.00",
+      "stock": 3,
+      "imagen": "",
+      "categoria": 18,
+      "marca": 29,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Material": "NEO Hybrid Leatherette",
+        "Estructura": "Acero premium",
+        "Peso max.": "130 kg",
+        "Reclinación": "165°",
+        "Reposabrazos": "4D cloud",
+        "Lumbar": "Magnético integrado",
+        "Garantía": "5 años"
+      },
+      "creado": "2026-05-05T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 50,
+    "fields": {
+      "nombre": "Silla Gaming Cougar Armor One",
+      "descripcion": "Silla gaming con tapizado de alta calidad, soporte lumbar y cervical incluidos. Estructura metálica robusta, base de aluminio y ruedas silenciosas. Hasta 120kg.",
+      "precio_usd": "199.00",
+      "precio_soles": "742.00",
+      "stock": 8,
+      "imagen": "",
+      "categoria": 18,
+      "marca": 30,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Material": "PU premium",
+        "Estructura": "Acero + base aluminio",
+        "Peso max.": "120 kg",
+        "Reclinación": "180°",
+        "Reposabrazos": "1D",
+        "Ruedas": "Silenciosas 60mm",
+        "Garantía": "1 año"
+      },
+      "creado": "2026-05-05T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 37,
+    "fields": {
+      "producto": 43,
+      "tipo": "MONITOR",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 38,
+    "fields": {
+      "producto": 44,
+      "tipo": "MONITOR",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 39,
+    "fields": {
+      "producto": 45,
+      "tipo": "MONITOR",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 40,
+    "fields": {
+      "producto": 46,
+      "tipo": "MONITOR",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.componentepc",
+    "pk": 41,
+    "fields": {
+      "producto": 47,
+      "tipo": "MONITOR",
+      "socket_compatible": "",
+      "tipo_ram_compatible": "",
+      "watts_recomendados": 0,
+      "form_factor": ""
+    }
+  },
+  {
+    "model": "tienda.configuracion",
+    "pk": 1,
+    "fields": {
+      "nombre_tienda": "FENK Computers",
+      "whatsapp": "+51999999999",
+      "direccion": "Lima, Perú",
+      "instagram": "@fenkcomputers",
+      "facebook": "/fenkcomputers",
+      "tiktok": "@fenkcomputers",
+      "youtube": ""
+    }
+  },
+  {
+    "model": "tienda.categoria",
+    "pk": 19,
+    "fields": {
+      "nombre": "Refrigeración",
+      "descripcion": "Coolers AIO, torres de aire, pasta térmica y fans RGB",
+      "icono": "❄️"
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 31,
+    "fields": {
+      "nombre": "DeepCool",
+      "logo": null
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 32,
+    "fields": {
+      "nombre": "Noctua",
+      "logo": null
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 33,
+    "fields": {
+      "nombre": "Arctic",
+      "logo": null
+    }
+  },
+  {
+    "model": "tienda.marca",
+    "pk": 34,
+    "fields": {
+      "nombre": "Thermal Grizzly",
+      "logo": null
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 51,
+    "fields": {
+      "nombre": "Corsair iCUE H100i RGB AIO 240mm",
+      "descripcion": "Refrigeración líquida AIO con radiador de 240mm, bomba de alto rendimiento y dos ventiladores LL120 RGB.",
+      "precio_usd": "129.00",
+      "precio_soles": "481.00",
+      "stock": 8,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 6,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Refrigeración Líquida AIO",
+        "Radiador": "240mm",
+        "Ventiladores": "2× LL120 RGB 120mm",
+        "Velocidad ventilador": "600–1500 RPM",
+        "Sockets Intel": "LGA1700, LGA1200, LGA115x",
+        "Sockets AMD": "AM5, AM4",
+        "TDP máximo": "280W"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 52,
+    "fields": {
+      "nombre": "NZXT Kraken X63 280mm AIO",
+      "descripcion": "AIO de alto rendimiento con radiador 280mm, cabezal con pantalla LCD y ventiladores Aer RGB 140mm.",
+      "precio_usd": "149.00",
+      "precio_soles": "556.00",
+      "stock": 5,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 18,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Refrigeración Líquida AIO",
+        "Radiador": "280mm",
+        "Ventiladores": "2× Aer RGB 140mm",
+        "Velocidad ventilador": "500–1800 RPM",
+        "Sockets Intel": "LGA1700, LGA1200, LGA115x",
+        "Sockets AMD": "AM5, AM4",
+        "TDP máximo": "300W"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 53,
+    "fields": {
+      "nombre": "Cooler Master MasterLiquid 360mm AIO",
+      "descripcion": "AIO de triple radiador 360mm con bomba de doble cámara y tres ventiladores de 120mm incluidos.",
+      "precio_usd": "119.00",
+      "precio_soles": "444.00",
+      "stock": 6,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 16,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Refrigeración Líquida AIO",
+        "Radiador": "360mm",
+        "Ventiladores": "3× 120mm PWM",
+        "Velocidad ventilador": "650–1800 RPM",
+        "Sockets Intel": "LGA1700, LGA1200, LGA115x",
+        "Sockets AMD": "AM5, AM4",
+        "TDP máximo": "350W"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 54,
+    "fields": {
+      "nombre": "Lian Li Galahad II 360mm AIO RGB",
+      "descripcion": "AIO premium con radiador 360mm, cabezal Infinity Mirror y tres ventiladores UNI Fan SL 120mm ARGB.",
+      "precio_usd": "189.00",
+      "precio_soles": "705.00",
+      "stock": 3,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 17,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Refrigeración Líquida AIO",
+        "Radiador": "360mm",
+        "Ventiladores": "3× UNI Fan SL 120mm ARGB",
+        "Velocidad ventilador": "800–1900 RPM",
+        "Sockets Intel": "LGA1700, LGA1200",
+        "Sockets AMD": "AM5, AM4",
+        "TDP máximo": "400W"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 55,
+    "fields": {
+      "nombre": "DeepCool LT520 AIO 240mm",
+      "descripcion": "AIO 240mm con pantalla OLED personalizable en el cabezal y ventiladores FC120 de alto flujo.",
+      "precio_usd": "89.00",
+      "precio_soles": "332.00",
+      "stock": 10,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 31,
+      "es_nuevo": false,
+      "es_oferta": true,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Refrigeración Líquida AIO",
+        "Radiador": "240mm",
+        "Ventiladores": "2× FC120 120mm",
+        "Velocidad ventilador": "500–1850 RPM",
+        "Pantalla cabezal": "OLED personalizable",
+        "Sockets Intel": "LGA1700, LGA1200, LGA115x",
+        "Sockets AMD": "AM5, AM4",
+        "TDP máximo": "250W"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 56,
+    "fields": {
+      "nombre": "Noctua NH-D15 Torre Doble",
+      "descripcion": "El cooler de aire de referencia mundial. Doble torre con dos ventiladores NF-A15 de 140mm. Silencioso y potente.",
+      "precio_usd": "99.00",
+      "precio_soles": "369.00",
+      "stock": 7,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 32,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Disipador de Aire Torre Doble",
+        "Altura": "165mm",
+        "Ventiladores": "2× NF-A15 140mm",
+        "Velocidad ventilador": "300–1500 RPM",
+        "Sockets Intel": "LGA1700, LGA1200, LGA115x",
+        "Sockets AMD": "AM5, AM4",
+        "TDP máximo": "250W",
+        "Nivel de ruido": "19.2–24.6 dB(A)"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 57,
+    "fields": {
+      "nombre": "Cooler Master Hyper 212 Torre Simple",
+      "descripcion": "El disipador de aire más vendido del mundo. Torre simple con 4 heatpipes de contacto directo y fan PWM.",
+      "precio_usd": "39.00",
+      "precio_soles": "145.00",
+      "stock": 15,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 16,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Disipador de Aire Torre Simple",
+        "Altura": "158.8mm",
+        "Heatpipes": "4 heatpipes de cobre CDC",
+        "Ventiladores": "1× 120mm PWM",
+        "Velocidad ventilador": "650–1800 RPM",
+        "Sockets Intel": "LGA1700, LGA1200, LGA115x",
+        "Sockets AMD": "AM5, AM4",
+        "TDP máximo": "150W"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 58,
+    "fields": {
+      "nombre": "Arctic Freezer 34 eSports Torre Simple",
+      "descripcion": "Cooler de aire con 4 heatpipes y ventilador BioniX P120 de presión estática. Excelente relación precio/rendimiento.",
+      "precio_usd": "35.00",
+      "precio_soles": "130.00",
+      "stock": 12,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 33,
+      "es_nuevo": false,
+      "es_oferta": true,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Disipador de Aire Torre Simple",
+        "Altura": "157mm",
+        "Heatpipes": "4 heatpipes de cobre",
+        "Ventiladores": "1× BioniX P120 120mm",
+        "Velocidad ventilador": "200–2100 RPM",
+        "Sockets Intel": "LGA1700, LGA1200, LGA115x",
+        "Sockets AMD": "AM5, AM4",
+        "TDP máximo": "120W"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 59,
+    "fields": {
+      "nombre": "DeepCool AK620 Torre Doble",
+      "descripcion": "Disipador doble torre premium con 6 heatpipes y dos ventiladores PWM 120mm. Alto rendimiento y bajo ruido.",
+      "precio_usd": "49.00",
+      "precio_soles": "183.00",
+      "stock": 9,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 31,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Disipador de Aire Torre Doble",
+        "Altura": "160mm",
+        "Heatpipes": "6 heatpipes de cobre",
+        "Ventiladores": "2× FC120 120mm PWM",
+        "Velocidad ventilador": "500–1850 RPM",
+        "Sockets Intel": "LGA1700, LGA1200, LGA115x",
+        "Sockets AMD": "AM5, AM4",
+        "TDP máximo": "260W"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 60,
+    "fields": {
+      "nombre": "Noctua NH-L9i Low Profile",
+      "descripcion": "Cooler ultra-compacto de perfil bajo (37mm) ideal para gabinetes ITX y HTPC. Silencioso y eficiente.",
+      "precio_usd": "49.00",
+      "precio_soles": "183.00",
+      "stock": 8,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 32,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Disipador Low Profile",
+        "Altura": "37mm",
+        "Ventiladores": "1× NF-B9 92mm",
+        "Velocidad ventilador": "400–2500 RPM",
+        "Sockets Intel": "LGA1700, LGA1200, LGA115x",
+        "TDP máximo": "65W",
+        "Uso ideal": "Gabinetes ITX / HTPC"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 61,
+    "fields": {
+      "nombre": "Thermal Grizzly Kryonaut Pasta Térmica 1g",
+      "descripcion": "Pasta térmica de referencia usada por overclockers. Conductividad 17.5 W/mK, sin necesidad de curado.",
+      "precio_usd": "12.00",
+      "precio_soles": "45.00",
+      "stock": 30,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 34,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Pasta Térmica",
+        "Conductividad térmica": "17.5 W/mK",
+        "Viscosidad": "130–160 Pa·s",
+        "Cantidad": "1g",
+        "Temperatura de uso": "–250°C a 350°C",
+        "Eléctricamente conductiva": "No"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 62,
+    "fields": {
+      "nombre": "Arctic MX-6 Pasta Térmica 4g",
+      "descripcion": "Pasta térmica de carbono de alto rendimiento. Sin metal, segura para todo uso. Pack generoso de 4g.",
+      "precio_usd": "8.00",
+      "precio_soles": "30.00",
+      "stock": 40,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 33,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Pasta Térmica",
+        "Conductividad térmica": "14 W/mK",
+        "Cantidad": "4g",
+        "Temperatura de uso": "–150°C a 180°C",
+        "Eléctricamente conductiva": "No"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 63,
+    "fields": {
+      "nombre": "Lian Li UNI Fan SL120 RGB x3 Pack",
+      "descripcion": "Pack de 3 fans ARGB 120mm con sistema daisy-chain. Controlador incluido, compatible con iCUE y Aura Sync.",
+      "precio_usd": "59.00",
+      "precio_soles": "220.00",
+      "stock": 10,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 17,
+      "es_nuevo": true,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Fan ARGB",
+        "Tamaño": "120mm",
+        "Velocidad": "800–1900 RPM",
+        "Iluminación": "ARGB Daisy-Chain",
+        "Conector": "4-pin PWM + ARGB 3-pin",
+        "Ruido máximo": "25.2 dB(A)",
+        "Pack": "3 unidades + controlador"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  },
+  {
+    "model": "tienda.producto",
+    "pk": 64,
+    "fields": {
+      "nombre": "Corsair LL120 RGB Fan Pack x3",
+      "descripcion": "Pack triple fans RGB 120mm con 16 LEDs en doble anillo. Incluye Lighting Node CORE para control por iCUE.",
+      "precio_usd": "49.00",
+      "precio_soles": "183.00",
+      "stock": 12,
+      "imagen": "",
+      "categoria": 19,
+      "marca": 6,
+      "es_nuevo": false,
+      "es_oferta": false,
+      "consultar_disponibilidad": false,
+      "especificaciones": {
+        "Tipo": "Fan RGB",
+        "Tamaño": "120mm",
+        "Velocidad": "600–1500 RPM",
+        "Iluminación": "16 LEDs RGB doble anillo",
+        "Conector": "4-pin PWM + RGB",
+        "Ruido máximo": "24.8 dB(A)",
+        "Pack": "3 unidades + Lighting Node CORE"
+      },
+      "creado": "2026-05-27T00:00:00Z"
+    }
+  }
 ]

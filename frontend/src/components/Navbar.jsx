@@ -19,12 +19,13 @@ export default function Navbar() {
       <div className="bg-fenk-red">
         <div className="max-w-7xl mx-auto px-4 flex items-center gap-6 h-8 overflow-x-auto">
           {[
-            { label: "Laptops",       categorias: "16" },
-            { label: "PCs Completas", categorias: "17" },
-            { label: "Componentes",   categorias: "1,2,3,4,5,6,7" },
-            { label: "Monitores",     categorias: "8" },
-            { label: "Periféricos",   categorias: "9,10,11,12,13,14,15" },
-            { label: "Sillas Gaming", categorias: "18" },
+            { label: "Laptops",        categorias: "16" },
+            { label: "PCs Completas",  categorias: "17" },
+            { label: "Componentes",    categorias: "1,2,3,4,5,6,7" },
+            { label: "Refrigeración",  categorias: "19" },
+            { label: "Monitores",      categorias: "8" },
+            { label: "Periféricos",    categorias: "9,10,11,12,13,14,15" },
+            { label: "Sillas Gaming",  categorias: "18" },
           ].map(({ label, categorias }) => (
             <Link
               key={label}
