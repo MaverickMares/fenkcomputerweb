@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useApi } from "../hooks/useApi";
 import CardProducto from "../components/CardProducto";
@@ -111,9 +111,16 @@ export default function CatalogoPage() {
     if (grupoActivo) setGrupoAbierto(grupoActivo.label);
   }, [grupoActivo?.label]);
 
-  const { data: marcas } = useApi("/marcas/");
+  // Marca se filtra en el cliente para poder derivar marcas disponibles del listaBase completo
   const { data: productos, cargando } = useApi(
-    buildEndpoint({ categorias: categoriasParam, ...filtros })
+    buildEndpoint({
+      categorias: categoriasParam,
+      esNuevo: filtros.esNuevo,
+      esOferta: filtros.esOferta,
+      precioMin: filtros.precioMin,
+      precioMax: filtros.precioMax,
+      orden: filtros.orden,
+    })
   );
 
   useEffect(() => {
@@ -121,11 +128,36 @@ export default function CatalogoPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [categoriasParam, selectedSub, filtros]);
 
-  // Aplicar matchFn de la subcategoría activa (filtrado en frontend)
+  // listaBase = todos los productos de la categoría activa (sin filtro de marca)
   const listaBase = Array.isArray(productos) ? productos : [];
-  const lista = (subActiva?.matchFn && selectedSub)
-    ? listaBase.filter((p) => subActiva.matchFn(p))
+
+  // Marcas disponibles derivadas de los productos de la categoría activa
+  const marcasDisponibles = useMemo(() => {
+    const seen = new Map();
+    listaBase.forEach((p) => {
+      if (p.marca && p.marca_nombre && !seen.has(p.marca)) {
+        seen.set(p.marca, { id: p.marca, nombre: p.marca_nombre });
+      }
+    });
+    return [...seen.values()].sort((a, b) => a.nombre.localeCompare(b.nombre));
+  }, [listaBase]);
+
+  // Si la marca seleccionada ya no existe en la categoría activa, la limpia
+  useEffect(() => {
+    if (!filtros.marca) return;
+    setFiltros((prev) => {
+      const existe = marcasDisponibles.some((m) => String(m.id) === prev.marca);
+      return existe ? prev : { ...prev, marca: "" };
+    });
+  }, [marcasDisponibles]);
+
+  // Filtro de marca en cliente + matchFn de subcategoría
+  const listaMarca = filtros.marca
+    ? listaBase.filter((p) => String(p.marca) === filtros.marca)
     : listaBase;
+  const lista = (subActiva?.matchFn && selectedSub)
+    ? listaMarca.filter((p) => subActiva.matchFn(p))
+    : listaMarca;
 
   const total        = lista.length;
   const totalPaginas = Math.ceil(total / POR_PAGINA);
@@ -296,14 +328,14 @@ export default function CatalogoPage() {
                 </div>
               </div>
 
-              {/* Marcas — checkboxes single-select */}
-              {marcas?.length > 0 && (
+              {/* Marcas — filtradas según categoría activa */}
+              {marcasDisponibles.length > 0 && (
                 <div>
                   <h3 className="font-heading font-bold text-white text-sm uppercase tracking-wider mb-3">
                     Marcas
                   </h3>
                   <div className="space-y-1 max-h-52 overflow-y-auto pr-1">
-                    {marcas.map((m) => {
+                    {marcasDisponibles.map((m) => {
                       const checked = filtros.marca === String(m.id);
                       return (
                         <label key={m.id} className="flex items-center gap-2 cursor-pointer group">
