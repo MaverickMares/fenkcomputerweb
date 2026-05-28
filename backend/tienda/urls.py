@@ -6,6 +6,7 @@ from .views import (
     ProductoViewSet,
     ConfiguracionViewSet,
     ComponentePCViewSet,
+    seed_view,
 )
 
 router = DefaultRouter()
@@ -17,4 +18,5 @@ router.register(r"componentes", ComponentePCViewSet, basename="componente")
 
 urlpatterns = [
     path("", include(router.urls)),
+    path("seed/", seed_view),
 ]
