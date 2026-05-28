@@ -18,7 +18,7 @@ export default function Footer() {
               <span className="text-white font-heading font-semibold text-lg">Computers</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
-              Tu tienda gaming en Lima, Perú. Laptops, PCs, componentes y accesorios con garantía y soporte técnico.
+              Tu tienda gaming en Ilo, Perú. Laptops, PCs, componentes y accesorios con garantía y soporte técnico.
             </p>
             <div className="flex gap-4">
               {config?.instagram && (
