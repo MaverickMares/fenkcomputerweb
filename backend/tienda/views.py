@@ -3,6 +3,8 @@ from django.core.management import call_command
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
+import os
+from django.http import JsonResponse
 from rest_framework import viewsets
 from rest_framework.response import Response
 from .models import Categoria, Marca, Producto, Configuracion, ComponentePC
@@ -110,6 +112,15 @@ class ComponentePCViewSet(viewsets.ReadOnlyModelViewSet):
             qs = qs.filter(form_factor__in=allowed)
 
         return qs.filter(producto__stock__gt=0)
+
+
+def debug_env(request):
+    val = os.environ.get("CLOUDINARY_URL", "")
+    return JsonResponse({
+        "CLOUDINARY_URL_exists": bool(val),
+        "CLOUDINARY_URL_preview": val[:20] if val else None,
+        "DEFAULT_FILE_STORAGE": getattr(__import__("django.conf", fromlist=["settings"]).settings, "DEFAULT_FILE_STORAGE", None),
+    })
 
 
 @csrf_exempt

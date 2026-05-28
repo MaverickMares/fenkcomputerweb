@@ -7,6 +7,7 @@ from .views import (
     ConfiguracionViewSet,
     ComponentePCViewSet,
     seed_view,
+    debug_env,
 )
 
 router = DefaultRouter()
@@ -19,4 +20,5 @@ router.register(r"componentes", ComponentePCViewSet, basename="componente")
 urlpatterns = [
     path("", include(router.urls)),
     path("seed/", seed_view),
+    path("debug-env/", debug_env),
 ]
