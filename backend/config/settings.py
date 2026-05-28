@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from decouple import config, Csv
 import dj_database_url
@@ -84,7 +85,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # ─── Archivos de medios ───────────────────────────────────────────────────────
-CLOUDINARY_URL = config("CLOUDINARY_URL", default=None)
+CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 
 if CLOUDINARY_URL:
     DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
