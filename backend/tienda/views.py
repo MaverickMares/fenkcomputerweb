@@ -1,8 +1,3 @@
-import os
-from django.core.management import call_command
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from django.views.decorators.http import require_POST
 from rest_framework import viewsets
 from rest_framework.response import Response
 from .models import Categoria, Marca, Producto, Configuracion, ComponentePC
@@ -110,32 +105,3 @@ class ComponentePCViewSet(viewsets.ReadOnlyModelViewSet):
             qs = qs.filter(form_factor__in=allowed)
 
         return qs.filter(producto__stock__gt=0)
-
-
-@csrf_exempt
-@require_POST
-def seed_view(request):
-    secret = os.environ.get("SEED_SECRET", "")
-    if not secret or request.headers.get("X-Seed-Key") != secret:
-        return JsonResponse({"error": "Forbidden"}, status=403)
-
-    antes = {
-        "categorias": Categoria.objects.count(),
-        "marcas": Marca.objects.count(),
-        "productos": Producto.objects.count(),
-        "configuracion": Configuracion.objects.count(),
-        "componentes": ComponentePC.objects.count(),
-    }
-
-    call_command("loaddata", "datos_iniciales.json", verbosity=0)
-
-    despues = {
-        "categorias": Categoria.objects.count(),
-        "marcas": Marca.objects.count(),
-        "productos": Producto.objects.count(),
-        "configuracion": Configuracion.objects.count(),
-        "componentes": ComponentePC.objects.count(),
-    }
-
-    creados = {k: despues[k] - antes[k] for k in antes}
-    return JsonResponse({"ok": True, "totales": despues, "creados": creados})
