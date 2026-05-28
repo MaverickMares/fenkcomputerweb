@@ -8,6 +8,7 @@ from .views import (
     ComponentePCViewSet,
     seed_view,
     debug_env,
+    migrate_images,
 )
 
 router = DefaultRouter()
@@ -21,4 +22,5 @@ urlpatterns = [
     path("", include(router.urls)),
     path("seed/", seed_view),
     path("debug-env/", debug_env),
+    path("migrate-images/", migrate_images),
 ]

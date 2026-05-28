@@ -123,6 +123,28 @@ def debug_env(request):
     })
 
 
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+from django.core.management import call_command
+import io
+
+@csrf_exempt
+@require_POST
+def migrate_images(request):
+    secret = os.environ.get("SEED_SECRET", "")
+    if not secret or request.headers.get("X-Seed-Key") != secret:
+        return JsonResponse({"error": "Forbidden"}, status=403)
+    buf = io.StringIO()
+    import sys
+    old_stdout = sys.stdout
+    sys.stdout = buf
+    try:
+        call_command("migrate_images_to_cloudinary")
+    finally:
+        sys.stdout = old_stdout
+    return JsonResponse({"ok": True, "output": buf.getvalue()})
+
+
 @csrf_exempt
 @require_POST
 def seed_view(request):
