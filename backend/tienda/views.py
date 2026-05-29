@@ -117,16 +117,25 @@ class ComponentePCViewSet(viewsets.ReadOnlyModelViewSet):
 def debug_env(request):
     import cloudinary
     from django.conf import settings as djsettings
+    from django.core.files.storage import default_storage
+    from tienda.models import Producto
     val = os.environ.get("CLOUDINARY_URL", "")
     cfg = cloudinary.config()
-    test_resource = cloudinary.CloudinaryResource("productos/test.avif", default_resource_type="image")
+    p1 = Producto.objects.filter(imagen__isnull=False).exclude(imagen="").first()
+    storage_url = None
+    field_url = None
+    storage_class = default_storage.__class__.__name__
+    if p1:
+        storage_url = default_storage.url(p1.imagen.name)
+        field_url = p1.imagen.url
     return JsonResponse({
         "CLOUDINARY_URL_exists": bool(val),
-        "CLOUDINARY_URL_preview": val[:30] if val else None,
         "DEFAULT_FILE_STORAGE": getattr(djsettings, "DEFAULT_FILE_STORAGE", None),
         "cloudinary_cloud_name": cfg.cloud_name,
-        "cloudinary_api_key_set": bool(cfg.api_key),
-        "test_cloudinary_url": test_resource.url,
+        "default_storage_class": storage_class,
+        "product_imagen_name": p1.imagen.name if p1 else None,
+        "storage_url_result": storage_url,
+        "field_url_result": field_url,
     })
 
 
