@@ -4,8 +4,8 @@ const API_MEDIA = (import.meta.env.VITE_API_URL || "http://localhost:8000/api").
 
 export default function GaleriaFotos({ imagenPrincipal, galeria = [] }) {
   const fotos = [
-    { id: "principal", url: imagenPrincipal ? `${API_MEDIA}${imagenPrincipal}` : null },
-    ...galeria.map((g) => ({ id: g.id, url: g.imagen ? `${API_MEDIA}${g.imagen}` : null })),
+    { id: "principal", url: imagenPrincipal ? (imagenPrincipal.startsWith("http") ? imagenPrincipal : `${API_MEDIA}${imagenPrincipal}`) : null },
+    ...galeria.map((g) => ({ id: g.id, url: g.imagen ? (g.imagen.startsWith("http") ? g.imagen : `${API_MEDIA}${g.imagen}`) : null })),
   ].filter((f) => f.url);
 
   const [activa, setActiva] = useState(0);

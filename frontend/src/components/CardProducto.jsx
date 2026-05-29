@@ -6,7 +6,9 @@ const API_MEDIA = (import.meta.env.VITE_API_URL || "http://localhost:8000/api").
 export default function CardProducto({ producto }) {
   const { config } = useConfig();
   const whatsapp = (config?.whatsapp || "+51999999999").replace(/\D/g, "");
-  const imgUrl = producto.imagen ? `${API_MEDIA}${producto.imagen}` : null;
+  const imgUrl = producto.imagen
+    ? (producto.imagen.startsWith("http") ? producto.imagen : `${API_MEDIA}${producto.imagen}`)
+    : null;
 
   const msgWa = encodeURIComponent(
     `Hola! Me interesa: ${producto.nombre} — S/ ${parseFloat(producto.precio_soles).toFixed(2)}`

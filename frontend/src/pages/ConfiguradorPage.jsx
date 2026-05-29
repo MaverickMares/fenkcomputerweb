@@ -48,7 +48,9 @@ function useComponentes(tipo, filtros = {}) {
 
 function ComponentCard({ componente, seleccionado, onSelect }) {
   const prod   = componente.producto;
-  const imgUrl = prod.imagen ? `${API_MEDIA}${prod.imagen}` : null;
+  const imgUrl = prod.imagen
+    ? (prod.imagen.startsWith("http") ? prod.imagen : `${API_MEDIA}${prod.imagen}`)
+    : null;
   return (
     <button
       onClick={() => onSelect(componente)}
