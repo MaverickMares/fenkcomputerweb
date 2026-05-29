@@ -6,9 +6,6 @@ from .views import (
     ProductoViewSet,
     ConfiguracionViewSet,
     ComponentePCViewSet,
-    seed_view,
-    debug_env,
-    migrate_images,
 )
 
 router = DefaultRouter()
@@ -20,7 +17,4 @@ router.register(r"componentes", ComponentePCViewSet, basename="componente")
 
 urlpatterns = [
     path("", include(router.urls)),
-    path("seed/", seed_view),
-    path("debug-env/", debug_env),
-    path("migrate-images/", migrate_images),
 ]
