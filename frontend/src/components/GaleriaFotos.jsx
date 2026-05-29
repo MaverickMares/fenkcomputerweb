@@ -28,7 +28,7 @@ export default function GaleriaFotos({ imagenPrincipal, galeria = [] }) {
     <div className="flex flex-col gap-3">
       {/* Foto principal */}
       <div
-        className="relative overflow-hidden rounded-xl bg-fenk-dark border border-fenk-border cursor-zoom-in"
+        className="relative overflow-hidden rounded-xl bg-fenk-dark border border-fenk-border cursor-zoom-in flex items-center justify-center"
         style={{ aspectRatio: "4/3" }}
         onMouseEnter={() => setZoom(true)}
         onMouseLeave={() => setZoom(false)}
@@ -36,7 +36,7 @@ export default function GaleriaFotos({ imagenPrincipal, galeria = [] }) {
         <img
           src={fotos[activa].url}
           alt="Foto del producto"
-          className={`w-full h-full object-cover transition-transform duration-700 ${zoom ? "scale-110" : "scale-100"}`}
+          className={`w-full h-full object-contain transition-transform duration-700 ${zoom ? "scale-110" : "scale-100"}`}
         />
         {fotos.length > 1 && (
           <>
