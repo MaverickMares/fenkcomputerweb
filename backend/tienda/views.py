@@ -115,11 +115,18 @@ class ComponentePCViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 def debug_env(request):
+    import cloudinary
+    from django.conf import settings as djsettings
     val = os.environ.get("CLOUDINARY_URL", "")
+    cfg = cloudinary.config()
+    test_resource = cloudinary.CloudinaryResource("productos/test.avif", default_resource_type="image")
     return JsonResponse({
         "CLOUDINARY_URL_exists": bool(val),
-        "CLOUDINARY_URL_preview": val[:20] if val else None,
-        "DEFAULT_FILE_STORAGE": getattr(__import__("django.conf", fromlist=["settings"]).settings, "DEFAULT_FILE_STORAGE", None),
+        "CLOUDINARY_URL_preview": val[:30] if val else None,
+        "DEFAULT_FILE_STORAGE": getattr(djsettings, "DEFAULT_FILE_STORAGE", None),
+        "cloudinary_cloud_name": cfg.cloud_name,
+        "cloudinary_api_key_set": bool(cfg.api_key),
+        "test_cloudinary_url": test_resource.url,
     })
 
 
