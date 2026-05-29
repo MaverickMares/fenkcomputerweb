@@ -28,7 +28,7 @@ export default function GaleriaFotos({ imagenPrincipal, galeria = [] }) {
     <div className="flex flex-col gap-3">
       {/* Foto principal */}
       <div
-        className="relative overflow-hidden rounded-xl bg-fenk-dark border border-fenk-border cursor-zoom-in flex items-center justify-center"
+        className="relative overflow-hidden rounded-xl bg-gray-900 border border-fenk-border cursor-zoom-in flex items-center justify-center"
         style={{ aspectRatio: "4/3" }}
         onMouseEnter={() => setZoom(true)}
         onMouseLeave={() => setZoom(false)}
